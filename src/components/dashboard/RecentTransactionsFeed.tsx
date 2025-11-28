@@ -40,7 +40,6 @@ export function RecentTransactionsFeed({
     return map;
   }, [payTypes]);
 
-  // 최근 거래 정렬 (시간순)
   const recentTransactions = useMemo(() => {
     if (!transactionsData?.content) return [];
 
@@ -53,7 +52,6 @@ export function RecentTransactionsFeed({
       .slice(0, limit);
   }, [transactionsData, limit]);
 
-  // 시간 포맷팅
   const formatTime = (dateString?: string) => {
     if (!dateString) return "-";
     const date = new Date(dateString);

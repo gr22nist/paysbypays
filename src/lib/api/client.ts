@@ -28,8 +28,6 @@ async function parseErrorBody(response: Response): Promise<unknown> {
 }
 
 async function fetchApi<T>(endpoint: string, options?: RequestInit): Promise<T> {
-  // Next.js API 프록시를 통해 호출 (CORS 문제 해결)
-  // endpoint는 "/payments/list" 형태로 들어옴
   const proxyPath = endpoint.startsWith("/") ? endpoint.slice(1) : endpoint;
   const url = `/api/proxy/${proxyPath}`;
   
@@ -160,8 +158,6 @@ export const transactionsApi = {
     if (params?.mchtCode) queryParams.append("mchtCode", params.mchtCode);
 
     const query = queryParams.toString();
-    // 실제 엔드포인트가 없을 경우 클라이언트 측에서 집계
-    // 일단 /payments/list를 호출하고 클라이언트에서 집계
     return fetchApi<{
       status: number;
       message: string;
@@ -276,7 +272,6 @@ export const settlementsApi = {
     if (params?.mchtCode) queryParams.append("mchtCode", params.mchtCode);
 
     const query = queryParams.toString();
-    // 실제 엔드포인트 확인 필요
     return fetchApi(`/settlements${query ? `?${query}` : ""}`);
   },
 

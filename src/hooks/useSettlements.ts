@@ -63,7 +63,6 @@ export function useSettlements(): UseSettlementsResult {
     setError(null);
 
     try {
-      // 거래 내역과 가맹점 목록을 병렬로 로드
       const [transactionsResponse, merchantsResponse] = await Promise.all([
         transactionsApi.getTransactions({
           page: 0,
@@ -71,14 +70,13 @@ export function useSettlements(): UseSettlementsResult {
         }),
         merchantsApi.getMerchants({
           page: 0,
-          size: 1000, // 충분히 큰 사이즈로 전체 가맹점 로드
+          size: 1000,
         }),
       ]);
 
       const raw = transactionsResponse?.data ?? [];
       const transactions: Transaction[] = raw.map(paymentListResToTransaction);
 
-      // 가맹점 목록에서 가맹점 코드 -> 이름 매핑 생성 (거래 내역 페이지와 동일한 로직)
       const merchantNameMap = new Map<string, string>();
       if (merchantsResponse?.data) {
         merchantsResponse.data.forEach((merchant) => {
@@ -86,7 +84,6 @@ export function useSettlements(): UseSettlementsResult {
         });
       }
 
-      // 거래 내역에서 가맹점 이름이 있는 경우에도 매핑에 추가 (보완)
       transactions.forEach((tx) => {
         if (tx.merchantId && tx.merchantName && !merchantNameMap.has(tx.merchantId)) {
           merchantNameMap.set(tx.merchantId, tx.merchantName);

@@ -218,7 +218,6 @@ export default function TransactionsPage() {
     initialPageSize: 25,
   });
 
-  // 필터 변경 시 페이지 리셋
   useEffect(() => {
     setCurrentPage(0);
   }, [mchtCodeFilter, transactionPayType, transactionStatus, setCurrentPage]);

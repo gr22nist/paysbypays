@@ -115,7 +115,6 @@ export function useTransactionTable({
         }
       });
     } else {
-      // 기본 정렬: 최신순
       filtered = [...filtered].sort((a, b) => {
         const aTime = new Date(a.createdAt || 0).getTime();
         const bTime = new Date(b.createdAt || 0).getTime();
@@ -126,7 +125,6 @@ export function useTransactionTable({
     return filtered;
   }, [filteredByMerchant, transactionPayType, transactionStatus, sortField, sortDirection, merchantNameMap]);
 
-  // 정렬 핸들러
   const handleSort = (field: SortField) => {
     if (sortField === field) {
       if (sortDirection === "asc") {

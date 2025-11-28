@@ -127,9 +127,7 @@ export function Sidebar({ activeItem }: SidebarProps) {
   };
 
   const handleLogout = () => {
-    // Mock 로그아웃 기능 (장식용)
     console.log("로그아웃 요청 (Mock)");
-    // 실제 구현 시: 로그아웃 API 호출, 세션 정리, 리다이렉트 등
   };
 
   const sections = useMemo(() => {

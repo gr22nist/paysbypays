@@ -172,7 +172,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
       </div>
 
       <div className="space-y-4">
-        {/* 거래 금액 */}
         <div>
           <div className="mb-1 text-xs text-[var(--text-muted)]">{t("dashboard:sections.summary.metrics.totalVolume.label")}</div>
           <div className="flex items-baseline gap-2">
@@ -185,7 +184,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
           </div>
         </div>
 
-        {/* 거래 건수 */}
         <div>
           <div className="mb-1 text-xs text-[var(--text-muted)]">{t("dashboard:sections.summary.metrics.totalCount.label")}</div>
           <div className="flex items-baseline gap-2">
@@ -198,7 +196,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
           </div>
         </div>
 
-        {/* 승인률 */}
         <div>
           <div className="mb-1 text-xs text-[var(--text-muted)]">{t("dashboard:sections.summary.metrics.approvalRate.label")}</div>
           <div className="flex items-baseline gap-2">
@@ -211,7 +208,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
           </div>
         </div>
 
-        {/* 평균 거래금액 */}
         <div>
           <div className="mb-1 text-xs text-[var(--text-muted)]">{t("dashboard:sections.summary.metrics.averageAmount.label")}</div>
           <div className="flex items-baseline gap-2">

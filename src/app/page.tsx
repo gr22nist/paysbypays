@@ -108,7 +108,6 @@ export default function Home() {
     }>();
 
     transactionsData.content.forEach((tx) => {
-      // 한화(KRW) 통화만 집계
       const currency = (tx.currency || "").toUpperCase();
       if (currency !== "KRW") {
         return; // KRW가 아닌 통화는 제외

@@ -85,10 +85,8 @@ export function TransactionTable({
   const [exportFormat, setExportFormat] = useState<"csv" | "excel">("excel");
 
   const handleExport = async () => {
-    // 필터링된 전체 거래 내역 내보내기 (현재 페이지가 아닌 전체)
     const transactionsToExport = allFilteredTransactions || transactions;
     
-    // 가맹점 이름 매핑 적용
     const transactionsWithMerchantNames = transactionsToExport.map((tx) => ({
       ...tx,
       merchantName: tx.merchantName || (tx.merchantId ? merchantNameMap.get(tx.merchantId) : undefined),

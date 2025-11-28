@@ -17,7 +17,6 @@ export function SettlementAlertCard({ className = "" }: SettlementAlertCardProps
   const { data: settlementData, isLoading } = useSettlements();
   const { formatCurrency } = useDisplayFormat();
 
-  // 오늘/내일 정산 예정 정보 계산
   const settlementInfo = useMemo(() => {
     if (!settlementData?.records) {
       return {
