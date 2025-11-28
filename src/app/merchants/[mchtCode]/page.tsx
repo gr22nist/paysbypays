@@ -84,7 +84,6 @@ export default function MerchantDetailPage() {
     ? (stats.approvedCount / stats.totalTransactions) * 100 
     : 0;
 
-  // 거래 내역 데이터 변환 및 필터링 (해당 가맹점만 표시)
   const transactionListData = useMemo(() => {
     return merchantTransactions.map((tx) => {
       const status = (tx.status || "").toLowerCase();

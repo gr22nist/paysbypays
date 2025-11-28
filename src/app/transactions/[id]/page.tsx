@@ -18,22 +18,18 @@ export default function TransactionDetailPage() {
   const router = useRouter();
   const transactionId = params.id as string;
 
-  // 거래 코드로 필터링하여 단일 거래 조회
   const { data: transactionsData, isLoading, error } = useTransactions({
     page: 0,
-    size: 1000, // 충분히 큰 사이즈로 조회
+    size: 1000,
   });
 
-  // 거래 데이터에서 해당 ID 찾기
   const transaction = useMemo(() => {
     if (!transactionsData?.content) return null;
     return transactionsData.content.find((tx) => tx.id === transactionId);
   }, [transactionsData, transactionId]);
 
-  // Transaction 타입에 mchtCode가 있을 수 있도록 확장된 타입
   type TransactionWithMchtCode = Transaction & { mchtCode?: string };
   
-  // 가맹점 정보 조회
   const transactionWithMchtCode = transaction as TransactionWithMchtCode | null;
   const mchtCode = transactionWithMchtCode?.mchtCode || transaction?.merchantId;
   const { data: merchant, isLoading: merchantLoading } = useMerchant(mchtCode || "");
