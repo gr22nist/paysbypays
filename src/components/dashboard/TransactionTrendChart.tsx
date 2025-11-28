@@ -21,17 +21,14 @@ export function TransactionTrendChart({
 }: TransactionTrendChartProps) {
   const { t } = useTranslation();
   
-  // series의 label을 번역
   const translatedSeries = series.map((s) => ({
     ...s,
-    label: s.label.includes(":") ? t(s.label) : s.label, // 번역 키 형식인 경우만 번역
+    label: s.label.includes(":") ? t(s.label) : s.label,
   }));
   
-  // categories의 번역 키를 번역
   const translatedCategories = categories.map((cat) => {
     let translated = cat;
     
-    // "common:weekdays.xxx" 형식의 번역 키가 포함된 경우 번역
     const weekdayMatch = cat.match(/\(common:weekdays\.(\w+)\)/);
     if (weekdayMatch) {
       const dayKey = weekdayMatch[1];
@@ -39,7 +36,6 @@ export function TransactionTrendChart({
       translated = translated.replace(`(common:weekdays.${dayKey})`, `(${translatedDay})`);
     }
     
-    // "common:time.hour" 형식의 번역 키가 포함된 경우 번역
     if (translated.includes("common:time.hour")) {
       const hourMatch = translated.match(/(\d+)common:time\.hour/);
       if (hourMatch) {

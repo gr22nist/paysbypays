@@ -209,7 +209,6 @@ export function MerchantTable({
                       key={merchant.mchtCode}
                       className="micro-link cursor-pointer hover:bg-[var(--surface-muted)]/50"
                       onClick={(e) => {
-                        // Link 클릭 시에는 드로어를 열지 않음
                         if ((e.target as HTMLElement).closest("a")) {
                           return;
                         }

@@ -99,7 +99,6 @@ export default function TransactionsPage() {
         const statusKey = status.code.toUpperCase();
         const translationKey = `transactions:statuses.${statusKey}`;
         const translatedLabel = t(translationKey);
-        // 번역 키가 없으면 (MISSING으로 표시되거나 키 자체가 반환되면) 원본 description 사용
         const isMissing = translatedLabel.includes("[MISSING:") || translatedLabel === translationKey;
         return {
           value: status.code,
@@ -112,7 +111,6 @@ export default function TransactionsPage() {
   const payTypeOptions = useMemo(
     () =>
       payTypes.map((type) => {
-        // getPayTypeTranslationKey를 사용하여 VACT, BILLING 등의 매핑도 처리
         const translationKey = getPayTypeTranslationKey(type.type);
         if (translationKey) {
           const translatedLabel = t(translationKey);
@@ -122,7 +120,6 @@ export default function TransactionsPage() {
             label: isMissing ? type.description : translatedLabel,
           };
         }
-        // 번역 키가 없으면 원본 description 사용
         return {
           value: type.type,
           label: type.description,
@@ -174,34 +171,7 @@ export default function TransactionsPage() {
     to: selectedPreset.value === "all" ? undefined : toDate,
     status: transactionStatus,
     mchtCode: mchtCodeFilter,
-    // payType 필터는 API 파라미터 확인 필요, 일단 클라이언트 필터링
   });
-
-  // 디버깅: 실제 거래 데이터의 결제수단 코드 확인
-  useEffect(() => {
-    if (transactionsData?.content && transactionsData.content.length > 0) {
-      const payTypeSet = new Set<string>();
-      transactionsData.content.forEach(tx => {
-        const payType = tx.paymentMethod || tx.payType;
-        if (payType) {
-          payTypeSet.add(payType);
-        }
-      });
-      console.log("📊 실제 거래 데이터의 결제수단 코드 목록:", Array.from(payTypeSet).sort());
-      
-      const virtualAndSub = Array.from(payTypeSet).filter(pt => 
-        pt.toUpperCase().includes("VIRTUAL") || 
-        pt.toUpperCase().includes("SUBSCRIPTION") || 
-        pt.toUpperCase().includes("VACT") || 
-        pt.toUpperCase().includes("SUB") ||
-        pt === "가상계좌" || 
-        pt === "정기결제"
-      );
-      if (virtualAndSub.length > 0) {
-        console.log("🎯 가상계좌/정기결제 관련 코드:", virtualAndSub);
-      }
-    }
-  }, [transactionsData]);
 
   const overallStats = useMemo(() => {
     const txs = transactionsData?.content || [];
@@ -305,7 +275,6 @@ export default function TransactionsPage() {
           loading={isLoading}
         />
 
-        {/* 필터 패널 - 테이블 위에 배치 */}
         <TransactionFilterPanel
           panelClass={PANEL_CLASS}
           showFilters={showFilters}

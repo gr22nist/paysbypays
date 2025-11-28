@@ -28,12 +28,10 @@ export function RecentTransactionsFeed({
   const { formatCurrency } = useDisplayFormat();
   const { payTypes } = useCommonCodes();
 
-  // 결제수단 매핑 (번역 키가 없을 때만 API description 사용)
   const payTypeMap = useMemo(() => {
     const map = new Map<string, string>();
     payTypes.forEach((pt) => {
       const upperType = pt.type.toUpperCase();
-      // 번역 키가 없을 때만 API description 사용
       const translationKey = getPayTypeTranslationKey(pt.type);
       if (!translationKey && pt.description) {
         map.set(upperType, pt.description);

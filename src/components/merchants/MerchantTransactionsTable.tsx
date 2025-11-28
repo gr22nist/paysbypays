@@ -44,12 +44,10 @@ export function MerchantTransactionsTable({
   const { t } = useTranslation();
   const { payTypes } = useCommonCodes();
 
-  // 결제수단 매핑 (번역 키가 없을 때만 API description 사용)
   const payTypeMap = useMemo(() => {
     const map = new Map<string, string>();
     payTypes.forEach((pt) => {
       const upperType = pt.type.toUpperCase();
-      // 번역 키가 없을 때만 API description 사용
       const translationKey = getPayTypeTranslationKey(pt.type);
       if (!translationKey && pt.description) {
         map.set(upperType, pt.description);
@@ -75,7 +73,6 @@ export function MerchantTransactionsTable({
         </div>
       ) : transactions.length > 0 ? (
         <>
-          {/* 거래 테이블 - 고정 높이 + 스크롤 */}
           <div className="overflow-x-auto overflow-y-auto" style={{ maxHeight: "600px" }}>
             <table className="w-full min-w-[600px]">
               <thead className="bg-gray-50 border-b border-gray-200 sticky top-0">
@@ -99,7 +96,6 @@ export function MerchantTransactionsTable({
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {transactions.map((tx) => {
-                  // Transaction 타입으로 변환
                   const transaction: Transaction = {
                     id: tx.id,
                     merchantId: mchtCode,
@@ -144,7 +140,6 @@ export function MerchantTransactionsTable({
               </tbody>
             </table>
           </div>
-          {/* 페이징 */}
           {totalPages > 1 && (
             <div className="border-t border-[var(--border-subtle)] bg-[var(--surface-muted)]/40 px-4 py-4">
               <Pagination

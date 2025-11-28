@@ -19,10 +19,8 @@ export default function SettlementsPage() {
   const { t, tWithParams } = useTranslation();
   const { data, isLoading } = useSettlements();
   
-  // 가맹점 목록 로드 (가맹점 이름 매핑용) - 거래 내역 페이지와 동일한 로직
-  const { data: merchantsData } = useMerchants({ size: 1000 }); // 충분히 큰 사이즈로 전체 가맹점 로드
+  const { data: merchantsData } = useMerchants({ size: 1000 });
 
-  // 가맹점 코드 -> 이름 매핑 생성 - 거래 내역 페이지와 동일한 로직
   const merchantNameMap = useMemo(() => {
     const map = new Map<string, string>();
     if (merchantsData?.content) {
@@ -43,7 +41,6 @@ export default function SettlementsPage() {
   };
   const timeline = data?.timeline ?? { categories: [], series: [] };
   
-  // 가맹점 이름 매핑 적용 - 거래 내역 페이지와 동일한 로직
   const enrichedRecords = useMemo(
     () =>
       settlements.map((record) => ({

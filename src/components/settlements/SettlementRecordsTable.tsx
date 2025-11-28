@@ -36,8 +36,6 @@ interface SettlementRecordsTableProps {
   panelClass: string;
 }
 
-// statusMeta는 컴포넌트 내부에서 t()를 사용하여 동적으로 생성
-
 export function SettlementRecordsTable({
   records,
   allRecords,
@@ -78,7 +76,6 @@ export function SettlementRecordsTable({
   const handleExport = async () => {
     const recordsToExport = allRecords || records;
     
-    // 상태를 번역된 텍스트로 변환
     const statusMap: Record<string, string> = {
       scheduled: t("settlements:statuses.scheduled"),
       processing: t("settlements:statuses.processing"),

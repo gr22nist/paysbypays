@@ -14,7 +14,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
   const { formatCurrency } = useDisplayFormat();
   const { t } = useTranslation();
 
-  // 오늘 날짜 범위 계산
   const today = useMemo(() => {
     const now = new Date();
     const start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -24,7 +23,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
     };
   }, []);
 
-  // 어제 날짜 범위 계산
   const yesterday = useMemo(() => {
     const now = new Date();
     const yesterdayDate = new Date(now);
@@ -48,7 +46,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
     };
   }, []);
 
-  // 오늘 거래 데이터
   const { data: todayData, isLoading: todayLoading } = useTransactions({
     page: 0,
     size: 1000,
@@ -56,7 +53,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
     to: today.to,
   });
 
-  // 어제 거래 데이터
   const { data: yesterdayData } = useTransactions({
     page: 0,
     size: 1000,
@@ -64,7 +60,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
     to: yesterday.to,
   });
 
-  // 오늘 지표 계산
   const todayMetrics = useMemo(() => {
     if (!todayData?.content) {
       return {
@@ -93,7 +88,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
     };
   }, [todayData]);
 
-  // 어제 지표 계산
   const yesterdayMetrics = useMemo(() => {
     if (!yesterdayData?.content) {
       return {
@@ -120,7 +114,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
     };
   }, [yesterdayData]);
 
-  // 증감률 계산
   const changes = useMemo(() => {
     const amountChange =
       yesterdayMetrics.amount > 0

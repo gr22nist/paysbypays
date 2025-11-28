@@ -105,7 +105,6 @@ export default function MerchantsPage() {
 
   const handleSort = (field: MerchantSortField) => {
     if (sortField === field) {
-      // 같은 필드 클릭 시: asc -> desc -> null 순환
       if (sortDirection === "asc") {
         setSortDirection("desc");
       } else if (sortDirection === "desc") {
@@ -115,7 +114,6 @@ export default function MerchantsPage() {
         setSortDirection("asc");
       }
     } else {
-      // 다른 필드 클릭 시: asc로 시작
       setSortField(field);
       setSortDirection("asc");
     }
