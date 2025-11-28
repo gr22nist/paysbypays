@@ -1,0 +1,90 @@
+{
+  "page": {
+    "title": "Settings",
+    "description": "Tune appearance, language, and accessibility for a consistent workflow. All settings are stored locally and sync with server profile when UI SDK is integrated."
+  },
+  "sections": {
+    "theme": {
+      "title": "Theme & Typography",
+      "description": "Match the brand tone while keeping your preferred view.",
+      "interfaceThemeLabel": "Interface theme",
+      "fontScaleLabel": "Font scale",
+      "options": {
+        "system": {
+          "label": "Follow system",
+          "description": "Automatically switches based on OS settings."
+        },
+        "light": {
+          "label": "Light mode",
+          "description": "Bright and clean tone, suitable for daytime monitoring."
+        },
+        "dark": {
+          "label": "Dark mode",
+          "description": "Calm contrast, suitable for nighttime and low-light environments."
+        }
+      }
+    },
+    "language": {
+      "title": "Locale & formatting",
+      "description": "Language, date, and currency formats apply across the dashboard."
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "description": "High contrast and reduced motion apply globally.",
+      "highContrast": {
+        "label": "High contrast",
+        "description": "Enhances table borders and text contrast to improve visibility."
+      },
+      "reducedMotion": {
+        "label": "Reduce motion",
+        "description": "Removes all transition effects to reduce dizziness."
+      }
+    }
+  },
+  "labels": {
+    "interfaceLanguage": "Interface language",
+    "dateFormat": "Date format",
+    "currency": "Default currency",
+    "highContrast": "High contrast",
+    "reducedMotion": "Reduce motion"
+  },
+  "dateFormats": {
+    "YYYY-MM-DD": "YYYY-MM-DD",
+    "YYYY_MM_DD": "YYYY/MM/DD",
+    "MM_DD_YYYY": "MM/DD/YYYY"
+  },
+  "currencies": {
+    "KRW": "KRW (₩)",
+    "USD": "USD ($)",
+    "JPY": "JPY (¥)"
+  },
+  "fontScale": {
+    "small": {
+      "label": "Small",
+      "description": "Highest information density layout"
+    },
+    "medium": {
+      "label": "Default",
+      "description": "Recommended – UI guide default scale"
+    },
+    "large": {
+      "label": "Large",
+      "description": "Body and tables are enlarged by 8%"
+    },
+    "xlarge": {
+      "label": "Extra large",
+      "description": "Prioritize readability"
+    }
+  },
+  "preview": {
+    "title": "Live preview",
+    "subtitle": "See how the current preferences render.",
+    "description": "Font scale, contrast, and format options are applied in real-time to global tables and charts.",
+    "badge": "Monthly approval",
+    "amountLabel": "Total approved",
+    "projectedPayout": "Projected payout",
+    "metricPrefix": "Metric",
+    "unit": "tx"
+  }
+}
+

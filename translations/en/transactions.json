@@ -1,0 +1,119 @@
+{
+  "page": {
+    "title": "Transactions",
+    "merchantTitle": "Merchant transactions",
+    "description": "Review and manage all transactions in one place.",
+    "merchantDescription": "You are viewing transactions for the selected merchant.",
+    "viewAll": "View all transactions",
+    "notFound": "Transaction not found.",
+    "checkCode": "Please check the transaction code."
+  },
+  "filters": {
+    "title": "Filters",
+    "description": "Narrow results by status or payment method.",
+    "status": "Status",
+    "payType": "Payment method",
+    "show": "Show filters",
+    "hide": "Hide filters",
+    "reset": "Reset filters",
+    "all": "All",
+    "clear": "Show all"
+  },
+  "table": {
+    "title": "Transaction list",
+    "description": "Review transactions that match your filters.",
+    "headers": {
+      "id": "Transaction ID",
+      "merchant": "Merchant",
+      "amount": "Amount",
+      "status": "Status",
+      "payMethod": "Payment method",
+      "createdAt": "Timestamp"
+    },
+    "empty": "No transactions found.",
+    "emptyMerchant": "No transactions for this merchant.",
+    "errorTitle": "We couldn't load transactions.",
+    "unknownMerchant": "Unknown merchant"
+  },
+  "stats": {
+    "title": "Key metrics",
+    "period": "Key KPIs for {{label}}",
+    "totalAmount": "Total volume",
+    "totalAmountDesc": "Based on {{label}}",
+    "totalCount": "Total transactions",
+    "totalCountDesc": "All transactions",
+    "approved": "Approvals",
+    "approvalRateLabel": "Approval rate: {{rate}}%",
+    "failed": "Failures",
+    "failedDesc": "Failed transactions"
+  },
+  "pagination": {
+    "pageInfo": "{{start}}-{{end}} / {{total}} tx",
+    "pageInfoEmpty": "0 shown",
+    "pageSize": "Page size"
+  },
+  "payTypes": {
+    "card": "Credit Card",
+    "terminal": "Terminal",
+    "mobile": "Mobile",
+    "bankTransfer": "Bank Transfer",
+    "virtualAccount": "Virtual Account",
+    "qr": "QR Payment",
+    "cash": "Cash",
+    "online": "Online",
+    "device": "Device",
+    "easyPay": "Easy Pay",
+    "subscription": "Subscription",
+    "other": "Other"
+  },
+  "detail": {
+    "title": "Transaction Details",
+    "transactionCode": "Transaction Code",
+    "transactionInfo": "Transaction Information",
+    "transactionCodeLabel": "Transaction Code",
+    "transactionAmount": "Transaction Amount",
+    "transactionStatus": "Transaction Status",
+    "paymentMethod": "Payment Method",
+    "paymentTime": "Payment Time",
+    "updatedTime": "Updated Time",
+    "merchantInfo": "Merchant Information",
+    "merchantCode": "Merchant Code",
+    "merchantName": "Merchant Name",
+    "merchantStatus": "Merchant Status",
+    "businessType": "Business Type",
+    "loadingMerchant": "Loading merchant information...",
+    "viewDetailPage": "View Detail Page",
+    "viewMerchantDetail": "Merchant Details",
+    "viewMerchantTransactions": "View Merchant Transactions",
+    "viewAllTransactions": "View All Transactions"
+  },
+  "basicInfo": {
+    "title": "Transaction Information",
+    "description": "You can check the basic information of the transaction"
+  },
+  "merchantInfo": {
+    "title": "Merchant Information",
+    "description": "Information about the merchant where the transaction occurred",
+    "viewDetail": "View Merchant Details →",
+    "loading": "Loading merchant information..."
+  },
+  "relatedLinks": {
+    "title": "Related Links",
+    "description": "You can navigate to related pages",
+    "merchantDetail": "Merchant Details",
+    "merchantTransactions": "Merchant Transactions",
+    "allTransactions": "All Transactions"
+  },
+  "export": {
+    "headers": {
+      "id": "Transaction ID",
+      "merchantName": "Merchant Name",
+      "amount": "Amount",
+      "currency": "Currency",
+      "status": "Status",
+      "paymentMethod": "Payment Method",
+      "createdAt": "Transaction Time"
+    }
+  }
+}
+

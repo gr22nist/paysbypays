@@ -1,0 +1,57 @@
+{
+  "groups": {
+    "transactions": "取引API",
+    "merchants": "加盟店API",
+    "commonCodes": "共通コードAPI",
+    "proxy": "APIプロキシ"
+  },
+  "actions": {
+    "refreshNow": "今すぐ更新"
+  },
+  "page": {
+    "serviceGroups": {
+      "title": "サービスグループ状態",
+      "description": "取引、加盟店、共通コードなどの主要APIグループの現状"
+    },
+    "polling": {
+      "running": "自動更新中",
+      "idle": "待機中"
+    },
+    "table": {
+      "headers": {
+        "group": "グループ",
+        "status": "ステータス",
+        "responseTime": "応答時間",
+        "lastChecked": "最終確認",
+        "message": "メッセージ"
+      }
+    },
+    "loading": "状態データを読み込み中です...",
+    "recentLogs": {
+      "title": "最近の状態ログ",
+      "description": "自動ポーリングで記録されたスナップショット",
+      "overallStatus": "全体状態",
+      "empty": "まだ記録された状態ログがありません。"
+    },
+    "stats": {
+      "title": "システム状態サマリー",
+      "description": "システム全体およびサービスグループ状態の概要",
+      "overallStatus": "全体状態"
+    }
+  },
+  "messages": {
+    "merchantApiSlow": "加盟店APIの応答が遅いです（モック）",
+    "responseDelay": "応答遅延が検出されました（モック）",
+    "noResponse": "サービス応答なし（モック）",
+    "needsCheck": "状態確認が必要です（モック）",
+    "intermittentDelay": "間欠的な遅延が検出されました（モックデータ）"
+  },
+  "banner": {
+    "down": "主要API障害が検出されました。即座の確認が必要です。",
+    "degraded": "一部のAPI応答が遅延しています。状態を確認してください。"
+  },
+  "errors": {
+    "unknown": "不明なヘルスチェックエラー"
+  }
+}
+

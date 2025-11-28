@@ -1,0 +1,90 @@
+{
+  "page": {
+    "quickActions": {
+      "title": "Quick Actions",
+      "description": "Quick access to settlement-related tasks",
+      "merchantSettlements": {
+        "title": "Merchant Settlement History",
+        "description": "View transaction/settlement history in merchant details"
+      },
+      "reviewTransactions": {
+        "title": "Review Transactions",
+        "description": "Preview scheduled transactions and their status"
+      },
+      "monitorSystem": {
+        "title": "System Status Monitoring",
+        "description": "Check core API status/latency immediately"
+      }
+    }
+  },
+  "stats": {
+    "title": "Summary Statistics",
+    "description": "Estimates combining actual transaction metrics and adjustments",
+    "totalScheduled": {
+      "label": "Total Scheduled Amount",
+      "description": "Net amount including scheduled + delayed"
+    },
+    "netAmount": {
+      "label": "Settlement Net Amount",
+      "description": "Expected receipt amount"
+    },
+    "scheduledProcessing": {
+      "label": "Scheduled/Processing",
+      "description": "Scheduled + Processing"
+    },
+    "completedDelayed": {
+      "label": "Completed / Delayed",
+      "description": "Based on last 7 days"
+    }
+  },
+  "timeline": {
+    "title": "Payout Schedule Trend",
+    "description": "Scheduled vs. Completed Net Amount",
+    "empty": "No data to display.",
+    "series": {
+      "scheduled": "Scheduled Net",
+      "completed": "Completed Net"
+    }
+  },
+  "table": {
+    "title": "Scheduled Settlement Records",
+    "description": "List combining actual transaction-based estimates and adjustment metrics",
+    "empty": "No scheduled settlement data available.",
+    "totalRecords": "Total {{total}} records",
+    "headers": {
+      "merchant": "Merchant",
+      "grossAmount": "Gross Amount",
+      "feeAmount": "Fee",
+      "netAmount": "Net Amount",
+      "scheduledDate": "Scheduled Date",
+      "status": "Status"
+    },
+    "payoutDateLabel": "Payout Date",
+    "pagination": {
+      "pageInfo": "Showing {{start}}-{{end}} of {{total}} records",
+      "zeroDisplay": "Showing 0 records"
+    }
+  },
+  "statuses": {
+    "scheduled": "Scheduled",
+    "processing": "Processing",
+    "completed": "Completed",
+    "delayed": "Delayed"
+  },
+  "merchant": {
+    "fallback": "Merchant {{code}}"
+  },
+  "export": {
+    "headers": {
+      "merchantCode": "Merchant Code",
+      "merchantName": "Merchant Name",
+      "grossAmount": "Gross Amount",
+      "feeAmount": "Fee",
+      "netAmount": "Net Amount",
+      "scheduledDate": "Scheduled Date",
+      "payoutDate": "Payout Date",
+      "status": "Status"
+    }
+  }
+}
+

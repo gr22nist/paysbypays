@@ -1,0 +1,90 @@
+{
+  "page": {
+    "title": "환경 설정",
+    "description": "개인화된 테마, 언어, 접근성 옵션을 지정해 일관된 업무 경험을 제공하세요. 모든 설정은 로컬에 저장되며 UI SDK 연동 시 서버 프로필과 동기화됩니다."
+  },
+  "sections": {
+    "theme": {
+      "title": "테마 & 타이포그래피",
+      "description": "브랜드 토큰을 기반으로 한 톤앤매너를 유지하면서도 나만의 디스플레이 환경을 구성합니다.",
+      "interfaceThemeLabel": "인터페이스 테마",
+      "fontScaleLabel": "글꼴 크기",
+      "options": {
+        "system": {
+          "label": "시스템 기본값",
+          "description": "운영체제 설정을 따라 자동 전환합니다."
+        },
+        "light": {
+          "label": "라이트 모드",
+          "description": "밝고 깔끔한 톤으로 주간 모니터링에 적합합니다."
+        },
+        "dark": {
+          "label": "다크 모드",
+          "description": "차분한 대비로 야간 및 저조도 환경에 적합합니다."
+        }
+      }
+    },
+    "language": {
+      "title": "지역 및 데이터 형식",
+      "description": "언어, 날짜, 금액 표기 방식을 지정하면 테이블 및 차트에 일관된 형식이 적용됩니다."
+    },
+    "accessibility": {
+      "title": "접근성",
+      "description": "고대비, 애니메이션 감소 옵션은 UI 전체에 즉시 적용됩니다.",
+      "highContrast": {
+        "label": "고대비 모드",
+        "description": "테이블 경계와 텍스트 대비를 강화해 명암비를 높입니다."
+      },
+      "reducedMotion": {
+        "label": "애니메이션 최소화",
+        "description": "모든 전환 효과를 제거해 어지러움을 줄입니다."
+      }
+    }
+  },
+  "labels": {
+    "interfaceLanguage": "인터페이스 언어",
+    "dateFormat": "날짜 표기 형식",
+    "currency": "기본 통화",
+    "highContrast": "고대비 모드",
+    "reducedMotion": "애니메이션 최소화"
+  },
+  "dateFormats": {
+    "YYYY-MM-DD": "YYYY-MM-DD",
+    "YYYY_MM_DD": "YYYY/MM/DD",
+    "MM_DD_YYYY": "MM/DD/YYYY"
+  },
+  "currencies": {
+    "KRW": "KRW (₩)",
+    "USD": "USD ($)",
+    "JPY": "JPY (¥)"
+  },
+  "fontScale": {
+    "small": {
+      "label": "작게",
+      "description": "정보 밀도가 가장 높은 레이아웃"
+    },
+    "medium": {
+      "label": "기본",
+      "description": "권장 값 – UI 가이드 기본 스케일"
+    },
+    "large": {
+      "label": "크게",
+      "description": "본문과 표가 8% 확대됩니다."
+    },
+    "xlarge": {
+      "label": "매우 크게",
+      "description": "가독성을 최우선으로 할 때"
+    }
+  },
+  "preview": {
+    "title": "실시간 미리보기",
+    "subtitle": "현재 설정이 이렇게 반영됩니다.",
+    "description": "글꼴 스케일과 대비, 형식 옵션은 전역 테이블·차트에 실시간 반영됩니다.",
+    "badge": "월간 승인율",
+    "amountLabel": "총 승인 금액",
+    "projectedPayout": "예상 정산액",
+    "metricPrefix": "지표",
+    "unit": "건"
+  }
+}
+

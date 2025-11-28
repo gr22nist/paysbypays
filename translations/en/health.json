@@ -1,0 +1,57 @@
+{
+  "groups": {
+    "transactions": "Transactions API",
+    "merchants": "Merchants API",
+    "commonCodes": "Common Codes API",
+    "proxy": "API Proxy"
+  },
+  "actions": {
+    "refreshNow": "Refresh Now"
+  },
+  "page": {
+    "serviceGroups": {
+      "title": "Service Group Status",
+      "description": "Status of major API groups including transactions, merchants, and common codes"
+    },
+    "polling": {
+      "running": "Auto-refreshing",
+      "idle": "Idle"
+    },
+    "table": {
+      "headers": {
+        "group": "Group",
+        "status": "Status",
+        "responseTime": "Response Time",
+        "lastChecked": "Last Checked",
+        "message": "Message"
+      }
+    },
+    "loading": "Loading status data...",
+    "recentLogs": {
+      "title": "Recent Status Logs",
+      "description": "Snapshots recorded by automatic polling",
+      "overallStatus": "Overall Status",
+      "empty": "No status logs recorded yet."
+    },
+    "stats": {
+      "title": "System Health Summary",
+      "description": "Overview of overall system and service group status",
+      "overallStatus": "Overall Status"
+    }
+  },
+  "messages": {
+    "merchantApiSlow": "Merchant API response is slow (Mock)",
+    "responseDelay": "Response delay detected (Mock)",
+    "noResponse": "No service response (Mock)",
+    "needsCheck": "Status check required (Mock)",
+    "intermittentDelay": "Intermittent delay detected (Mock data)"
+  },
+  "banner": {
+    "down": "Major API failure detected. Immediate attention required.",
+    "degraded": "Some API responses are delayed. Please check the status."
+  },
+  "errors": {
+    "unknown": "Unknown health check error"
+  }
+}
+

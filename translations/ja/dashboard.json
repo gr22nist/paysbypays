@@ -1,0 +1,99 @@
+{
+  "title": "決済サマリー",
+  "description": "リアルタイムの決済状況と異常を追跡します。",
+  "sections": {
+    "summary": {
+      "title": "主要指標",
+      "description": "全データの主要KPI",
+      "metrics": {
+        "totalVolume": {
+          "label": "総取引額",
+          "description": "累計金額"
+        },
+        "totalCount": {
+          "label": "取引件数",
+          "description": "累計件数"
+        },
+        "approvalRate": {
+          "label": "承認率",
+          "description": "総合承認比率"
+        },
+        "averageAmount": {
+          "label": "平均取引額",
+          "description": "1件あたりの平均"
+        }
+      }
+    },
+    "trend": {
+      "title": "ステータス別トレンド",
+      "description": "決済ステータスごとの日次推移",
+      "unit": "単位: 件",
+      "empty": "取引データがありません。"
+    },
+    "topAmount": {
+      "title": "取引額トップ加盟店",
+      "description": "総取引額 上位5件",
+      "empty": "取引データがありません。"
+    },
+    "topApproval": {
+      "title": "承認件数トップ加盟店",
+      "description": "承認件数 上位5件",
+      "empty": "取引データがありません。"
+    },
+    "systemHealth": {
+      "title": "システム状態",
+      "description": "主要APIのリアルタイム監視",
+      "latencyInfo": "レイテンシ指標",
+      "threshold": {
+        "healthy": { "label": "正常", "range": "≤ 800ms", "description": "目標応答" },
+        "degraded": { "label": "遅延", "range": "800 ~ 1,500ms", "description": "遅延検知" },
+        "down": { "label": "障害", "range": "≥ 1,500ms", "description": "即時対応が必要" }
+      },
+      "updated": "{{time}} 更新",
+      "noUpdate": "最近の更新なし",
+      "auto": {
+        "running": "自動更新中",
+        "idle": "待機中"
+      },
+      "viewDetail": "詳細を見る",
+      "latency": "{{latency}}ms 応答",
+      "noLatency": "遅延情報なし",
+      "refresh": "ヘルスデータを更新"
+    },
+    "recent": {
+      "title": "最近の取引",
+      "description": "最新の5件の取引を素早く確認できます",
+      "empty": "取引履歴がありません。",
+      "viewAll": "全取引履歴を見る",
+      "tableHeaders": {
+        "id": "取引コード",
+        "merchant": "加盟店",
+        "amount": "金額",
+        "status": "ステータス",
+        "paymentMethod": "決済方法",
+        "createdAt": "決済時刻"
+      }
+    },
+    "merchantStatus": {
+      "title": "加盟店ステータスサマリー",
+      "loading": "加盟店情報を読み込み中...",
+      "total": "全加盟店",
+      "active": "アクティブ加盟店",
+      "inactive": "非アクティブ加盟店",
+      "inactiveNote": "（過去7日間の取引なし）",
+      "new": "新規加盟店",
+      "newNote": "（過去30日間）",
+      "viewAll": "加盟店管理を見る"
+    },
+    "settlementAlert": {
+      "title": "精算予定アラート",
+      "loading": "精算情報を読み込み中...",
+      "empty": "予定された精算がありません。",
+      "delayed": "遅延精算",
+      "today": "本日精算予定",
+      "tomorrow": "明日精算予定",
+      "viewAll": "精算状況を見る"
+    }
+  }
+}
+

@@ -1,0 +1,119 @@
+{
+  "page": {
+    "title": "거래 내역",
+    "merchantTitle": "가맹점 거래 내역",
+    "description": "전체 거래 내역을 조회하고 관리할 수 있습니다.",
+    "merchantDescription": "해당 가맹점의 거래 내역을 조회할 수 있습니다.",
+    "viewAll": "전체 거래 보기",
+    "notFound": "거래를 찾을 수 없습니다.",
+    "checkCode": "거래 코드를 확인해주세요."
+  },
+  "filters": {
+    "title": "필터",
+    "description": "상태와 결제 수단을 기준으로 거래를 좁혀보세요.",
+    "status": "결제 상태",
+    "payType": "결제 수단",
+    "show": "필터 열기",
+    "hide": "필터 숨기기",
+    "reset": "필터 초기화",
+    "all": "전체",
+    "clear": "전체 보기"
+  },
+  "table": {
+    "title": "거래 목록",
+    "description": "조건에 맞는 거래 내역을 확인하세요.",
+    "headers": {
+      "id": "거래 코드",
+      "merchant": "가맹점",
+      "amount": "금액",
+      "status": "상태",
+      "payMethod": "결제 수단",
+      "createdAt": "결제 시각"
+    },
+    "empty": "거래 내역이 없습니다.",
+    "emptyMerchant": "해당 가맹점의 거래 내역이 없습니다.",
+    "errorTitle": "데이터를 불러오는 중 오류가 발생했습니다.",
+    "unknownMerchant": "미확인 가맹점"
+  },
+  "stats": {
+    "title": "통계 요약",
+    "period": "{{label}} 기간 주요 지표",
+    "totalAmount": "총 거래 금액",
+    "totalAmountDesc": "{{label}} 기준",
+    "totalCount": "총 거래 건수",
+    "totalCountDesc": "전체 거래",
+    "approved": "승인",
+    "approvalRateLabel": "승인률: {{rate}}%",
+    "failed": "실패",
+    "failedDesc": "실패한 거래"
+  },
+  "pagination": {
+    "pageInfo": "{{start}}-{{end}} / {{total}}건",
+    "pageInfoEmpty": "0건 표시",
+    "pageSize": "페이지 크기"
+  },
+  "payTypes": {
+    "card": "신용카드",
+    "terminal": "단말기",
+    "mobile": "모바일",
+    "bankTransfer": "계좌이체",
+    "virtualAccount": "가상계좌",
+    "qr": "QR 결제",
+    "cash": "현금",
+    "online": "온라인",
+    "device": "단말기",
+    "easyPay": "간편결제",
+    "subscription": "정기결제",
+    "other": "기타"
+  },
+  "detail": {
+    "title": "거래 상세",
+    "transactionCode": "거래 코드",
+    "transactionInfo": "거래 정보",
+    "transactionCodeLabel": "거래 코드",
+    "transactionAmount": "거래 금액",
+    "transactionStatus": "거래 상태",
+    "paymentMethod": "결제 수단",
+    "paymentTime": "결제 시각",
+    "updatedTime": "수정 시각",
+    "merchantInfo": "가맹점 정보",
+    "merchantCode": "가맹점 코드",
+    "merchantName": "가맹점명",
+    "merchantStatus": "가맹점 상태",
+    "businessType": "사업자 유형",
+    "loadingMerchant": "가맹점 정보를 불러오는 중...",
+    "viewDetailPage": "상세 페이지 보기",
+    "viewMerchantDetail": "가맹점 상세",
+    "viewMerchantTransactions": "해당 가맹점 거래 내역",
+    "viewAllTransactions": "전체 거래 내역"
+  },
+  "basicInfo": {
+    "title": "거래 정보",
+    "description": "거래의 기본 정보를 확인할 수 있습니다"
+  },
+  "merchantInfo": {
+    "title": "가맹점 정보",
+    "description": "거래가 발생한 가맹점 정보",
+    "viewDetail": "가맹점 상세 보기 →",
+    "loading": "가맹점 정보를 불러오는 중..."
+  },
+  "relatedLinks": {
+    "title": "관련 링크",
+    "description": "관련된 페이지로 이동할 수 있습니다",
+    "merchantDetail": "가맹점 상세 정보",
+    "merchantTransactions": "해당 가맹점 거래 내역",
+    "allTransactions": "전체 거래 내역"
+  },
+  "export": {
+    "headers": {
+      "id": "거래 ID",
+      "merchantName": "가맹점명",
+      "amount": "금액",
+      "currency": "통화",
+      "status": "상태",
+      "paymentMethod": "결제 수단",
+      "createdAt": "거래 시각"
+    }
+  }
+}
+

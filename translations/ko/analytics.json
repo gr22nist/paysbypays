@@ -1,0 +1,69 @@
+{
+  "page": {
+    "emptyData": "분석할 데이터가 없습니다."
+  },
+  "panels": {
+    "overallStats": {
+      "title": "전체 통계",
+      "totalCount": {
+        "label": "총 거래 건수",
+        "description": "전체 거래"
+      },
+      "totalAmount": {
+        "label": "총 거래 금액",
+        "description": "전체 금액"
+      },
+      "approvedCount": {
+        "label": "승인 건수",
+        "description": "승인률: {{rate}}%"
+      },
+      "failedCount": {
+        "label": "실패 건수",
+        "description": "실패한 거래"
+      }
+    },
+    "payTypeStats": {
+      "count": {
+        "title": "결제수단별 통계 (건수)",
+        "description": "결제수단별 거래 건수 분포"
+      },
+      "amount": {
+        "title": "결제수단별 통계 (금액)",
+        "description": "결제수단별 거래 금액 분포"
+      }
+    },
+    "statusDistribution": {
+      "title": "상태별 분포",
+      "description": "거래 상태별 분포 비율"
+    },
+    "topMerchants": {
+      "title": "TOP 가맹점 (금액 기준)",
+      "description": "거래 금액이 높은 상위 10개 가맹점",
+      "headers": {
+        "rank": "순위",
+        "merchantName": "가맹점명",
+        "transactionCount": "거래 건수",
+        "transactionAmount": "거래 금액"
+      }
+    },
+    "approvalRate": {
+      "title": "승인률 추이",
+      "description": "{{period}} 기간의 일별 승인률 변화"
+    },
+    "transactionTrend": {
+      "title": "시간대별 거래 추이",
+      "description": "{{period}} 기간의 일별 거래 추이"
+    }
+  },
+  "statusMapping": {
+    "approved": "승인",
+    "failed": "실패",
+    "pending": "대기",
+    "cancelled": "취소",
+    "other": "기타"
+  },
+  "approvalRate": {
+    "label": "승인률"
+  }
+}
+

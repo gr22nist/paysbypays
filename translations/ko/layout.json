@@ -1,0 +1,67 @@
+{
+  "sidebar": {
+    "sections": {
+      "overview": "모니터링",
+      "system": "시스템"
+    },
+    "items": {
+      "dashboard": "대시보드",
+      "transactions": "거래 내역",
+      "analytics": "분석/통계",
+      "merchants": "가맹점 관리",
+      "settlements": "정산",
+      "systemHealth": "시스템 상태",
+      "settings": "설정",
+      "logout": "로그아웃"
+    },
+    "aria": {
+      "expand": "사이드바 열기",
+      "collapse": "사이드바 접기",
+      "open": "사이드바 열기"
+    }
+  },
+  "header": {
+    "tagline": "PaysByPays",
+    "description": "결제 운영 상황을 실시간으로 모니터링하세요.",
+    "languageBadge": "언어",
+    "dateBadge": "날짜",
+    "currencyBadge": "통화",
+    "back": "이전 페이지로 이동",
+    "openSidebar": "사이드바 열기",
+    "themeToggle": {
+      "label": "테마 전환",
+      "light": "라이트 모드",
+      "dark": "다크 모드",
+      "system": "시스템"
+    }
+  },
+  "languageSwitcher": {
+    "label": "언어 전환",
+    "ko": "한국어",
+    "en": "영어",
+    "ja": "일본어"
+  },
+  "pages": {
+    "dashboard": {
+      "title": "결제 개요",
+      "description": "실시간 거래 현황과 이상 징후를 추적합니다."
+    },
+    "analytics": {
+      "title": "분석/통계",
+      "description": "거래 데이터를 다양한 관점에서 분석합니다"
+    },
+    "merchants": {
+      "title": "가맹점 관리",
+      "description": "가맹점 목록을 조회하고 관리할 수 있습니다"
+    },
+    "settlements": {
+      "title": "정산 현황",
+      "description": "가맹점별 예정/완료 정산 내역과 지급 일정을 확인합니다."
+    },
+    "systemHealth": {
+      "title": "시스템 상태",
+      "description": "PaysByPays 핵심 API 응답 상태와 지연 변화를 실시간으로 모니터링합니다."
+    }
+  }
+}
+

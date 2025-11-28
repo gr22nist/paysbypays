@@ -1,0 +1,130 @@
+{
+  "app": {
+    "name": "PaysByPays",
+    "tagline": "Payment Gateway Dashboard"
+  },
+  "language": {
+    "ko": "Korean",
+    "en": "English",
+    "ja": "Japanese"
+  },
+  "actions": {
+    "viewAll": "View all",
+    "retry": "Retry",
+    "refresh": "Refresh",
+    "close": "Close",
+    "save": "Save",
+    "export": "Export",
+    "register": "Register",
+    "viewDetails": "View details",
+    "back": "Back",
+    "excel": "Excel",
+    "csv": "CSV",
+    "cancel": "Cancel",
+    "expand": "Expand",
+    "collapse": "Collapse"
+  },
+  "labels": {
+    "language": "Language",
+    "date": "Date",
+    "currency": "Currency",
+    "total": "Total",
+    "average": "Average",
+    "filters": "Filters",
+    "status": "Status",
+    "merchant": "Merchant",
+    "totalAmount": "Total Amount",
+    "fee": "Fee",
+    "netAmount": "Net Amount",
+    "scheduledDate": "Scheduled Date",
+    "payoutDate": "Payout Date"
+  },
+  "units": {
+    "transactions": "tx",
+    "currency": "$",
+    "count": "",
+    "hour": "h"
+  },
+  "states": {
+    "loading": "Loading...",
+    "loadingData": "Loading data...",
+    "loadingError": "An error occurred while loading data.",
+    "empty": "No data available.",
+    "noDataForAnalysis": "No data available for analysis.",
+    "noHealth": "Fetching health data..."
+  },
+  "messages": {
+    "data_load_error": "An error occurred while loading data.",
+    "noDataToExport": "No data to export."
+  },
+  "statuses": {
+    "success": "Approved",
+    "approved": "Approved",
+    "failed": "Failed",
+    "cancelled": "Cancelled",
+    "pending": "Pending",
+    "review": "Review",
+    "unknown": "Unknown",
+    "healthy": "Healthy",
+    "degraded": "Degraded",
+    "down": "Outage",
+    "needsAttention": "Needs attention"
+  },
+  "filters": {
+    "all": "All",
+    "allView": "View all",
+    "placeholder": "All"
+  },
+  "pagination": {
+    "pageSize": "Page size",
+    "count": "items"
+  },
+  "scrollToTop": {
+    "ariaLabel": "Scroll to top",
+    "title": "Scroll to top"
+  },
+  "dateRanges": {
+    "today": "Today",
+    "7d": "Last 7 days",
+    "month": "This month",
+    "prevMonth": "Last month",
+    "all": "All"
+  },
+  "alerts": {
+    "close": "Close alert",
+    "dismissForDay": "Dismiss for 1 day",
+    "healthDown": {
+      "title": "System error detected",
+      "message": "{{count}} service(s) are not responding"
+    },
+    "healthDegraded": {
+      "title": "System latency detected",
+      "message": "Response delay occurred in {{count}} service(s)"
+    },
+    "highFailureRate": {
+      "title": "High failure rate detected",
+      "message": "Today's transaction failure rate is {{rate}}% (threshold: 10%)"
+    },
+    "moderateFailureRate": {
+      "title": "Failure rate increased",
+      "message": "Today's transaction failure rate is {{rate}}%"
+    },
+    "settlementDelayed": {
+      "title": "Settlement delayed",
+      "message": "{{count}} settlement(s) have been delayed"
+    }
+  },
+  "logout": {
+    "title": "Logout",
+    "message": "Are you sure you want to logout?",
+    "confirm": "Logout",
+    "success": "Logged out successfully"
+  },
+  "time": {
+    "justNow": "Just now",
+    "minutesAgo": "{{minutes}} minutes ago",
+    "hoursAgo": "{{hours}} hours ago",
+    "daysAgo": "{{days}} days ago"
+  }
+}
+

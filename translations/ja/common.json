@@ -1,0 +1,129 @@
+{
+  "app": {
+    "name": "PaysByPays",
+    "tagline": "決済ゲートウェイ ダッシュボード"
+  },
+  "language": {
+    "ko": "韓国語",
+    "en": "英語",
+    "ja": "日本語"
+  },
+  "actions": {
+    "viewAll": "すべて表示",
+    "retry": "再試行",
+    "refresh": "再読み込み",
+    "close": "閉じる",
+    "save": "保存",
+    "export": "エクスポート",
+    "register": "登録",
+    "viewDetails": "詳細を見る",
+    "back": "戻る",
+    "excel": "Excel",
+    "csv": "CSV",
+    "cancel": "キャンセル",
+    "expand": "展開",
+    "collapse": "折りたたむ"
+  },
+  "labels": {
+    "language": "言語",
+    "date": "日付",
+    "currency": "通貨",
+    "total": "合計",
+    "average": "平均",
+    "filters": "フィルター",
+    "status": "ステータス",
+    "merchant": "加盟店",
+    "totalAmount": "総額",
+    "fee": "手数料",
+    "netAmount": "実受取額",
+    "scheduledDate": "支払予定日",
+    "payoutDate": "支払日"
+  },
+  "units": {
+    "transactions": "件",
+    "currency": "¥",
+    "count": "個",
+    "hour": "時"
+  },
+  "states": {
+    "loading": "読み込み中...",
+    "loadingData": "データを読み込み中...",
+    "loadingError": "データの読み込み中にエラーが発生しました。",
+    "empty": "データがありません。",
+    "noDataForAnalysis": "分析するデータがありません。",
+    "noHealth": "ヘルスデータを取得しています..."
+  },
+  "messages": {
+    "data_load_error": "データの読み込み中にエラーが発生しました。"
+  },
+  "statuses": {
+    "success": "承認",
+    "approved": "承認",
+    "failed": "失敗",
+    "cancelled": "キャンセル",
+    "pending": "保留",
+    "review": "レビュー",
+    "unknown": "不明",
+    "healthy": "正常",
+    "degraded": "遅延",
+    "down": "障害",
+    "needsAttention": "注意が必要"
+  },
+  "filters": {
+    "all": "すべて",
+    "allView": "すべて表示",
+    "placeholder": "すべて"
+  },
+  "pagination": {
+    "pageSize": "ページサイズ",
+    "count": "件"
+  },
+  "scrollToTop": {
+    "ariaLabel": "トップにスクロール",
+    "title": "トップへ"
+  },
+  "dateRanges": {
+    "today": "今日",
+    "7d": "直近7日",
+    "month": "今月",
+    "prevMonth": "先月",
+    "all": "すべて"
+  },
+  "alerts": {
+    "close": "アラートを閉じる",
+    "dismissForDay": "1日間非表示",
+    "healthDown": {
+      "title": "システムエラー検出",
+      "message": "{{count}}個のサービスが応答していません"
+    },
+    "healthDegraded": {
+      "title": "システム遅延検出",
+      "message": "{{count}}個のサービスで応答遅延が発生しました"
+    },
+    "highFailureRate": {
+      "title": "高い失敗率検出",
+      "message": "今日の取引失敗率は{{rate}}%です（閾値：10%）"
+    },
+    "moderateFailureRate": {
+      "title": "失敗率増加",
+      "message": "今日の取引失敗率は{{rate}}%です"
+    },
+    "settlementDelayed": {
+      "title": "精算遅延",
+      "message": "{{count}}件の精算が遅延しています"
+    }
+  },
+  "logout": {
+    "title": "ログアウト",
+    "message": "本当にログアウトしますか？",
+    "confirm": "ログアウト",
+    "success": "ログアウトしました"
+  },
+  "time": {
+    "justNow": "たった今",
+    "minutesAgo": "{{minutes}}分前",
+    "hoursAgo": "{{hours}}時間前",
+    "daysAgo": "{{days}}日前"
+  }
+}
+

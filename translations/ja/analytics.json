@@ -1,0 +1,59 @@
+{
+  "page": {
+    "emptyData": "分析するデータがありません。"
+  },
+  "panels": {
+    "overallStats": {
+      "title": "全体統計",
+      "totalCount": {
+        "label": "総取引件数",
+        "description": "全取引"
+      },
+      "totalAmount": {
+        "label": "総取引額",
+        "description": "総額"
+      },
+      "approvedCount": {
+        "label": "承認件数",
+        "description": "承認率: {{rate}}%"
+      },
+      "failedCount": {
+        "label": "失敗件数",
+        "description": "失敗した取引"
+      }
+    },
+    "payTypeStats": {
+      "count": {
+        "title": "決済手段別統計（件数）",
+        "description": "決済手段別取引件数分布"
+      },
+      "amount": {
+        "title": "決済手段別統計（金額）",
+        "description": "決済手段別取引金額分布"
+      }
+    },
+    "statusDistribution": {
+      "title": "ステータス別分布",
+      "description": "取引ステータス別分布比率"
+    },
+    "topMerchants": {
+      "title": "TOP加盟店（金額基準）",
+      "description": "取引金額が高い上位10社の加盟店",
+      "headers": {
+        "rank": "順位",
+        "merchantName": "加盟店名",
+        "transactionCount": "取引件数",
+        "transactionAmount": "取引金額"
+      }
+    },
+    "approvalRate": {
+      "title": "承認率推移",
+      "description": "{{period}}期間の日別承認率変化"
+    },
+    "transactionTrend": {
+      "title": "時間帯別取引推移",
+      "description": "{{period}}期間の日別取引推移"
+    }
+  }
+}
+

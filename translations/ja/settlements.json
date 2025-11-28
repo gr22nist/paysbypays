@@ -1,0 +1,78 @@
+{
+  "page": {
+    "quickActions": {
+      "title": "クイックアクション",
+      "description": "精算関連の作業へのクイックアクセス",
+      "merchantSettlements": {
+        "title": "加盟店別精算履歴",
+        "description": "加盟店詳細で取引/精算履歴を確認"
+      },
+      "reviewTransactions": {
+        "title": "取引履歴の確認",
+        "description": "予定された取引とその状態を事前に確認"
+      },
+      "monitorSystem": {
+        "title": "システム状態モニタリング",
+        "description": "コアAPIの状態/遅延を即座に確認"
+      }
+    }
+  },
+  "stats": {
+    "title": "サマリー統計",
+    "description": "実際の取引指標と調整値を組み合わせた推定値",
+    "totalScheduled": {
+      "label": "予定総額",
+      "description": "予定 + 遅延を含む純額"
+    },
+    "netAmount": {
+      "label": "精算純額",
+      "description": "予想受取額"
+    },
+    "scheduledProcessing": {
+      "label": "予定/処理中",
+      "description": "支払予定 + 処理中"
+    },
+    "completedDelayed": {
+      "label": "完了 / 遅延",
+      "description": "直近7日間基準"
+    }
+  },
+  "timeline": {
+    "title": "支払スケジュール推移",
+    "description": "予定 vs. 完了純額",
+    "empty": "表示するデータがありません。",
+    "series": {
+      "scheduled": "予定純額",
+      "completed": "完了純額"
+    }
+  },
+  "table": {
+    "title": "予定精算記録",
+    "description": "実際の取引ベースの推定値と調整指標を組み合わせたリスト",
+    "empty": "予定された精算データがありません。",
+    "totalRecords": "合計 {{total}}件",
+    "headers": {
+      "merchant": "加盟店",
+      "grossAmount": "総額",
+      "feeAmount": "手数料",
+      "netAmount": "純受取額",
+      "scheduledDate": "支払予定日",
+      "status": "状態"
+    },
+    "payoutDateLabel": "支払日",
+    "pagination": {
+      "pageInfo": "{{total}}件中 {{start}}-{{end}}件を表示",
+      "zeroDisplay": "0件を表示"
+    }
+  },
+  "statuses": {
+    "scheduled": "支払予定",
+    "processing": "処理中",
+    "completed": "支払完了",
+    "delayed": "遅延"
+  },
+  "merchant": {
+    "fallback": "加盟店 {{code}}"
+  }
+}
+

@@ -1,0 +1,59 @@
+{
+  "page": {
+    "emptyData": "No data available for analysis."
+  },
+  "panels": {
+    "overallStats": {
+      "title": "Overall Statistics",
+      "totalCount": {
+        "label": "Total Transactions",
+        "description": "All transactions"
+      },
+      "totalAmount": {
+        "label": "Total Amount",
+        "description": "Total amount"
+      },
+      "approvedCount": {
+        "label": "Approved Count",
+        "description": "Approval rate: {{rate}}%"
+      },
+      "failedCount": {
+        "label": "Failed Count",
+        "description": "Failed transactions"
+      }
+    },
+    "payTypeStats": {
+      "count": {
+        "title": "Payment Method Statistics (Count)",
+        "description": "Transaction count distribution by payment method"
+      },
+      "amount": {
+        "title": "Payment Method Statistics (Amount)",
+        "description": "Transaction amount distribution by payment method"
+      }
+    },
+    "statusDistribution": {
+      "title": "Status Distribution",
+      "description": "Distribution ratio by transaction status"
+    },
+    "topMerchants": {
+      "title": "TOP Merchants (by Amount)",
+      "description": "Top 10 merchants by transaction amount",
+      "headers": {
+        "rank": "Rank",
+        "merchantName": "Merchant Name",
+        "transactionCount": "Transaction Count",
+        "transactionAmount": "Transaction Amount"
+      }
+    },
+    "approvalRate": {
+      "title": "Approval Rate Trend",
+      "description": "Daily approval rate changes for {{period}} period"
+    },
+    "transactionTrend": {
+      "title": "Transaction Trend by Time",
+      "description": "Daily transaction trend for {{period}} period"
+    }
+  }
+}
+

@@ -1,0 +1,67 @@
+{
+  "sidebar": {
+    "sections": {
+      "overview": "モニタリング",
+      "system": "システム"
+    },
+    "items": {
+      "dashboard": "ダッシュボード",
+      "transactions": "取引",
+      "analytics": "分析 / 統計",
+      "merchants": "加盟店管理",
+      "settlements": "精算",
+      "systemHealth": "システムヘルス",
+      "settings": "設定",
+      "logout": "ログアウト"
+    },
+    "aria": {
+      "expand": "サイドバーを開く",
+      "collapse": "サイドバーを閉じる",
+      "open": "サイドバーを開く"
+    }
+  },
+  "header": {
+    "tagline": "PaysByPays",
+    "description": "決済オペレーションをリアルタイムで監視します。",
+    "languageBadge": "言語",
+    "dateBadge": "日付",
+    "currencyBadge": "通貨",
+    "back": "前のページに戻る",
+    "openSidebar": "サイドバーを開く",
+    "themeToggle": {
+      "label": "テーマを切り替える",
+      "light": "ライトモード",
+      "dark": "ダークモード",
+      "system": "システム"
+    }
+  },
+  "languageSwitcher": {
+    "label": "言語を切り替える",
+    "ko": "韓国語",
+    "en": "英語",
+    "ja": "日本語"
+  },
+  "pages": {
+    "dashboard": {
+      "title": "決済概要",
+      "description": "リアルタイムの取引状況と異常を追跡します。"
+    },
+    "analytics": {
+      "title": "分析 / 統計",
+      "description": "取引データを様々な観点から分析します"
+    },
+    "merchants": {
+      "title": "加盟店管理",
+      "description": "加盟店リストを閲覧・管理できます"
+    },
+    "settlements": {
+      "title": "精算状況",
+      "description": "加盟店別の予定/完了精算明細と支払いスケジュールを確認します。"
+    },
+    "systemHealth": {
+      "title": "システムヘルス",
+      "description": "PaysByPaysコアAPIの応答ステータスとレイテンシの変化をリアルタイムで監視します。"
+    }
+  }
+}
+

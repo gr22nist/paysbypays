@@ -1,0 +1,99 @@
+{
+  "title": "Payment Overview",
+  "description": "Track live payment activity and anomalies.",
+  "sections": {
+    "summary": {
+      "title": "Key Metrics",
+      "description": "Primary KPIs across all data",
+      "metrics": {
+        "totalVolume": {
+          "label": "Total Volume",
+          "description": "Cumulative amount"
+        },
+        "totalCount": {
+          "label": "Transactions",
+          "description": "Total count"
+        },
+        "approvalRate": {
+          "label": "Approval Rate",
+          "description": "Overall approval ratio"
+        },
+        "averageAmount": {
+          "label": "Average Ticket",
+          "description": "Per-transaction average"
+        }
+      }
+    },
+    "trend": {
+      "title": "Trend by Status",
+      "description": "Daily movement by payment status",
+      "unit": "Unit: tx",
+      "empty": "No transaction data."
+    },
+    "topAmount": {
+      "title": "Top Merchants by Volume",
+      "description": "Top 5 by total volume",
+      "empty": "No transaction data."
+    },
+    "topApproval": {
+      "title": "Top Merchants by Approvals",
+      "description": "Top 5 by approvals",
+      "empty": "No transaction data."
+    },
+    "systemHealth": {
+      "title": "System Status",
+      "description": "Live monitoring for critical APIs",
+      "latencyInfo": "Latency reference",
+      "threshold": {
+        "healthy": { "label": "Healthy", "range": "≤ 800ms", "description": "Target response" },
+        "degraded": { "label": "Degraded", "range": "800 ~ 1,500ms", "description": "Latency detected" },
+        "down": { "label": "Outage", "range": "≥ 1,500ms", "description": "Immediate action" }
+      },
+      "updated": "Updated {{time}}",
+      "noUpdate": "No recent update",
+      "auto": {
+        "running": "Auto refresh on",
+        "idle": "Idle"
+      },
+      "viewDetail": "View details",
+      "latency": "{{latency}}ms response",
+      "noLatency": "No latency info",
+      "refresh": "Refresh health data"
+    },
+    "recent": {
+      "title": "Recent Transactions",
+      "description": "Quick view of the latest 5 transactions",
+      "empty": "No transactions found.",
+      "viewAll": "View all transactions",
+      "tableHeaders": {
+        "id": "Transaction ID",
+        "merchant": "Merchant",
+        "amount": "Amount",
+        "status": "Status",
+        "paymentMethod": "Payment Method",
+        "createdAt": "Time"
+      }
+    },
+    "merchantStatus": {
+      "title": "Merchant Status Summary",
+      "loading": "Loading merchant information...",
+      "total": "Total Merchants",
+      "active": "Active Merchants",
+      "inactive": "Inactive Merchants",
+      "inactiveNote": "(No transactions in last 7 days)",
+      "new": "New Merchants",
+      "newNote": "(Last 30 days)",
+      "viewAll": "View Merchant Management"
+    },
+    "settlementAlert": {
+      "title": "Settlement Alerts",
+      "loading": "Loading settlement information...",
+      "empty": "No scheduled settlements.",
+      "delayed": "Delayed Settlements",
+      "today": "Scheduled Today",
+      "tomorrow": "Scheduled Tomorrow",
+      "viewAll": "View Settlements"
+    }
+  }
+}
+

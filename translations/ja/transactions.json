@@ -1,0 +1,108 @@
+{
+  "page": {
+    "title": "取引一覧",
+    "merchantTitle": "加盟店別取引",
+    "description": "すべての取引を一元管理できます。",
+    "merchantDescription": "選択した加盟店の取引のみ表示しています。",
+    "viewAll": "すべての取引を見る",
+    "notFound": "取引が見つかりません。",
+    "checkCode": "取引コードを確認してください。"
+  },
+  "filters": {
+    "title": "フィルター",
+    "description": "ステータスや決済手段で絞り込みます。",
+    "status": "ステータス",
+    "payType": "決済手段",
+    "show": "フィルターを表示",
+    "hide": "フィルターを隠す",
+    "reset": "フィルターをリセット",
+    "all": "すべて",
+    "clear": "すべて表示"
+  },
+  "table": {
+    "title": "取引リスト",
+    "description": "条件に一致する取引を確認できます。",
+    "headers": {
+      "id": "取引ID",
+      "merchant": "加盟店",
+      "amount": "金額",
+      "status": "ステータス",
+      "payMethod": "決済手段",
+      "createdAt": "取引日時"
+    },
+    "empty": "該当する取引がありません。",
+    "emptyMerchant": "この加盟店の取引がありません。",
+    "errorTitle": "取引データを読み込めませんでした。",
+    "unknownMerchant": "不明な加盟店"
+  },
+  "stats": {
+    "title": "統計サマリー",
+    "period": "{{label}} の主要指標",
+    "totalAmount": "総取引額",
+    "totalAmountDesc": "{{label}} 基準",
+    "totalCount": "総取引件数",
+    "totalCountDesc": "全取引",
+    "approved": "承認件数",
+    "approvalRateLabel": "承認率: {{rate}}%",
+    "failed": "失敗件数",
+    "failedDesc": "失敗した取引"
+  },
+  "pagination": {
+    "pageInfo": "{{start}}-{{end}} / {{total}}件",
+    "pageInfoEmpty": "0件表示",
+    "pageSize": "ページサイズ"
+  },
+  "payTypes": {
+    "card": "クレジットカード",
+    "terminal": "端末",
+    "mobile": "モバイル",
+    "bankTransfer": "銀行振込",
+    "virtualAccount": "バーチャル口座",
+    "qr": "QR決済",
+    "cash": "現金",
+    "online": "オンライン",
+    "device": "端末",
+    "easyPay": "簡単決済",
+    "subscription": "定期決済",
+    "other": "その他"
+  },
+  "detail": {
+    "title": "取引詳細",
+    "transactionCode": "取引コード",
+    "transactionInfo": "取引情報",
+    "transactionCodeLabel": "取引コード",
+    "transactionAmount": "取引金額",
+    "transactionStatus": "取引ステータス",
+    "paymentMethod": "決済手段",
+    "paymentTime": "決済日時",
+    "updatedTime": "更新日時",
+    "merchantInfo": "加盟店情報",
+    "merchantCode": "加盟店コード",
+    "merchantName": "加盟店名",
+    "merchantStatus": "加盟店ステータス",
+    "businessType": "事業者タイプ",
+    "loadingMerchant": "加盟店情報を読み込み中...",
+    "viewDetailPage": "詳細ページを見る",
+    "viewMerchantDetail": "加盟店詳細",
+    "viewMerchantTransactions": "該当加盟店の取引履歴",
+    "viewAllTransactions": "すべての取引履歴"
+  },
+  "basicInfo": {
+    "title": "取引情報",
+    "description": "取引の基本情報を確認できます"
+  },
+  "merchantInfo": {
+    "title": "加盟店情報",
+    "description": "取引が発生した加盟店情報",
+    "viewDetail": "加盟店詳細を見る →",
+    "loading": "加盟店情報を読み込み中..."
+  },
+  "relatedLinks": {
+    "title": "関連リンク",
+    "description": "関連ページに移動できます",
+    "merchantDetail": "加盟店詳細情報",
+    "merchantTransactions": "該当加盟店の取引履歴",
+    "allTransactions": "すべての取引履歴"
+  }
+}
+

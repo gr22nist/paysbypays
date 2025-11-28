@@ -1,0 +1,163 @@
+{
+  "drawer": {
+    "title": "Merchant Details",
+    "subtitle": "Merchant Code",
+    "sections": {
+      "basicInfo": "Basic Information",
+      "contactInfo": "Contact Information",
+      "timestamps": "Registration Information"
+    },
+    "fields": {
+      "mchtCode": "Merchant Code",
+      "mchtName": "Merchant Name",
+      "status": "Status",
+      "bizType": "Business Type",
+      "bizNo": "Business Registration Number",
+      "address": "Address",
+      "phone": "Phone Number",
+      "email": "Email",
+      "registeredAt": "Registered Date",
+      "updatedAt": "Updated Date"
+    },
+    "actions": {
+      "viewDetail": "View Detail Page",
+      "viewTransactions": "View Transactions"
+    }
+  },
+  "filters": {
+    "search": "Search",
+    "searchPlaceholder": "Search by merchant name or code",
+    "status": "Merchant Status",
+    "reset": "Reset"
+  },
+  "stats": {
+    "title": "Statistics Summary",
+    "total": {
+      "label": "Total Merchants",
+      "description": "Number of registered merchants"
+    },
+    "active": {
+      "label": "Active Merchants",
+      "description": "Currently operating"
+    },
+    "ready": {
+      "label": "Preparing Merchants",
+      "description": "Preparing to open"
+    },
+    "closed": {
+      "label": "Closed · Suspended",
+      "description": "{{suspended}} suspended · {{inactive}} inactive"
+    }
+  },
+  "page": {
+    "register": {
+      "title": "Register Merchant",
+      "description": "Register a new merchant.",
+      "formTitle": "Merchant Information",
+      "formDescription": "Please enter the information of the merchant to register",
+      "error": "Failed to register merchant. Please try again."
+    },
+    "notFound": "Merchant information not found."
+  },
+  "statuses": {
+    "active": "Active",
+    "ready": "Preparing",
+    "suspended": "Suspended",
+    "inactive": "Inactive",
+    "closed": "Closed",
+    "unknown": "Needs Attention"
+  },
+  "export": {
+    "headers": {
+      "mchtCode": "Merchant Code",
+      "mchtName": "Merchant Name",
+      "status": "Status",
+      "bizType": "Business Type"
+    }
+  },
+  "table": {
+    "title": "Merchant List",
+    "description": "View and manage registered merchants",
+    "register": "Register",
+    "export": "Export",
+    "showFilters": "Show Filters",
+    "hideFilters": "Hide Filters",
+    "error": "An error occurred while loading data.",
+    "empty": "No merchants registered.",
+    "headers": {
+      "mchtCode": "Merchant Code",
+      "mchtName": "Merchant Name",
+      "status": "Status",
+      "bizType": "Business Type"
+    },
+    "pagination": {
+      "pageInfo": "Showing {{start}}-{{end}} of {{total}}",
+      "pageInfoEmpty": "Showing 0"
+    }
+  },
+  "form": {
+    "fields": {
+      "mchtName": "Merchant Name",
+      "mchtNamePlaceholder": "Enter merchant name",
+      "bizType": "Business Type",
+      "bizNo": "Business Registration Number",
+      "bizNoPlaceholder": "1234567890 (10 digits)",
+      "address": "Address",
+      "addressPlaceholder": "Enter address",
+      "phone": "Phone Number",
+      "phonePlaceholder": "010-1234-5678",
+      "email": "Email",
+      "emailPlaceholder": "example@domain.com",
+      "status": "Status",
+      "select": "Select",
+      "bizTypeOptions": {
+        "INDIVIDUAL": "Individual Business",
+        "CORPORATION": "Corporation",
+        "FREELANCER": "Freelancer"
+      }
+    },
+    "actions": {
+      "submitting": "Registering...",
+      "register": "Register"
+    },
+    "errors": {
+      "mchtNameRequired": "Please enter merchant name.",
+      "bizTypeRequired": "Please select business type.",
+      "bizNoRequired": "Please enter business registration number.",
+      "bizNoInvalid": "Invalid business registration number format. (10 digits)",
+      "addressRequired": "Please enter address.",
+      "phoneRequired": "Please enter phone number.",
+      "phoneInvalid": "Invalid phone number format.",
+      "emailRequired": "Please enter email.",
+      "emailInvalid": "Invalid email format."
+    }
+  },
+  "detail": {
+    "stats": {
+      "title": "Statistics Summary",
+      "totalTransactions": "Total Transactions",
+      "totalAmount": "Total Amount",
+      "approvalRate": "Approval Rate",
+      "failedCount": "Failed Count",
+      "transactionsUnit": "transactions",
+      "totalTransactionsDesc": "{{merchantName}} cumulative transactions",
+      "totalAmountDesc": "{{merchantName}} total amount",
+      "approvalRateDesc": "Approved {{count}} transactions",
+      "failedCountDesc": "{{merchantName}} failed transactions"
+    }
+  },
+  "transactions": {
+    "title": "Transaction History",
+    "viewAll": "View All →",
+    "loading": "Loading transaction history...",
+    "empty": "No transaction history.",
+    "headers": {
+      "id": "Transaction Code",
+      "amount": "Amount",
+      "status": "Status",
+      "payMethod": "Payment Method",
+      "createdAt": "Payment Time"
+    }
+  }
+}
+

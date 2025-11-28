@@ -1,0 +1,90 @@
+{
+  "page": {
+    "quickActions": {
+      "title": "빠른 액션",
+      "description": "정산 관련 작업 바로가기",
+      "merchantSettlements": {
+        "title": "가맹점별 정산 내역",
+        "description": "가맹점 상세에서 거래/정산 히스토리 확인"
+      },
+      "reviewTransactions": {
+        "title": "거래 내역 검토",
+        "description": "정산 예정 거래와 상태를 미리 확인"
+      },
+      "monitorSystem": {
+        "title": "시스템 상태 모니터링",
+        "description": "핵심 API 상태/지연을 즉시 확인"
+      }
+    }
+  },
+  "stats": {
+    "title": "요약 통계",
+    "description": "실제 거래 지표와 보정값을 결합한 추정치",
+    "totalScheduled": {
+      "label": "총 예정 금액",
+      "description": "예정 + 지연 포함 순액"
+    },
+    "netAmount": {
+      "label": "정산 순액",
+      "description": "예상 수령액"
+    },
+    "scheduledProcessing": {
+      "label": "예정/진행",
+      "description": "지급 예정 + 처리중"
+    },
+    "completedDelayed": {
+      "label": "완료 / 지연",
+      "description": "최근 7일 기준"
+    }
+  },
+  "timeline": {
+    "title": "지급 일정 추이",
+    "description": "지급 예정 vs. 완료 순액",
+    "empty": "표시할 데이터가 없습니다.",
+    "series": {
+      "scheduled": "예정 순액",
+      "completed": "완료 순액"
+    }
+  },
+  "table": {
+    "title": "정산 예정 내역",
+    "description": "실제 거래 기반 추정치와 보정 지표가 결합된 리스트",
+    "empty": "정산 예정 데이터가 없습니다.",
+    "totalRecords": "총 {{total}}건",
+    "headers": {
+      "merchant": "가맹점",
+      "grossAmount": "총 금액",
+      "feeAmount": "수수료",
+      "netAmount": "실수령액",
+      "scheduledDate": "지급 예정일",
+      "status": "상태"
+    },
+    "payoutDateLabel": "지급일",
+    "pagination": {
+      "pageInfo": "총 {{total}}건 중 {{start}}-{{end}}건 표시",
+      "zeroDisplay": "0건 표시"
+    }
+  },
+  "statuses": {
+    "scheduled": "지급 예정",
+    "processing": "처리 중",
+    "completed": "지급 완료",
+    "delayed": "지연"
+  },
+  "merchant": {
+    "fallback": "가맹점 {{code}}"
+  },
+  "export": {
+    "headers": {
+      "merchantCode": "가맹점 코드",
+      "merchantName": "가맹점명",
+      "grossAmount": "총 금액",
+      "feeAmount": "수수료",
+      "netAmount": "실수령액",
+      "scheduledDate": "지급 예정일",
+      "payoutDate": "지급일",
+      "status": "상태"
+    }
+  }
+}
+

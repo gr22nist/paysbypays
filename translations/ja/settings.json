@@ -1,0 +1,90 @@
+{
+  "page": {
+    "title": "環境設定",
+    "description": "テーマ、言語、アクセシビリティを調整して統一された作業体験を提供します。すべての設定はローカルに保存され、UI SDK連携時にサーバープロフィールと同期されます。"
+  },
+  "sections": {
+    "theme": {
+      "title": "テーマ & タイポグラフィ",
+      "description": "ブランドトーンを保ちながら個人の好みに合わせて調整します。",
+      "interfaceThemeLabel": "インターフェーステーマ",
+      "fontScaleLabel": "フォントサイズ",
+      "options": {
+        "system": {
+          "label": "システムに合わせる",
+          "description": "OS設定に従って自動的に切り替わります。"
+        },
+        "light": {
+          "label": "ライトモード",
+          "description": "明るくクリーンなトーンで、日中のモニタリングに適しています。"
+        },
+        "dark": {
+          "label": "ダークモード",
+          "description": "落ち着いたコントラストで、夜間や低照度環境に適しています。"
+        }
+      }
+    },
+    "language": {
+      "title": "ロケールと表記",
+      "description": "言語・日付・通貨のフォーマットはダッシュボード全体に適用されます。"
+    },
+    "accessibility": {
+      "title": "アクセシビリティ",
+      "description": "高コントラストやアニメーション削減を全画面に適用します。",
+      "highContrast": {
+        "label": "高コントラスト",
+        "description": "テーブルの境界線とテキストのコントラストを強化して視認性を向上させます。"
+      },
+      "reducedMotion": {
+        "label": "アニメーションを減らす",
+        "description": "すべてのトランジション効果を削除してめまいを軽減します。"
+      }
+    }
+  },
+  "labels": {
+    "interfaceLanguage": "インターフェース言語",
+    "dateFormat": "日付形式",
+    "currency": "基本通貨",
+    "highContrast": "高コントラスト",
+    "reducedMotion": "アニメーションを減らす"
+  },
+  "dateFormats": {
+    "YYYY-MM-DD": "YYYY-MM-DD",
+    "YYYY_MM_DD": "YYYY/MM/DD",
+    "MM_DD_YYYY": "MM/DD/YYYY"
+  },
+  "currencies": {
+    "KRW": "KRW (₩)",
+    "USD": "USD ($)",
+    "JPY": "JPY (¥)"
+  },
+  "fontScale": {
+    "small": {
+      "label": "小",
+      "description": "情報密度が最も高いレイアウト"
+    },
+    "medium": {
+      "label": "標準",
+      "description": "推奨値 – UIガイドの基本スケール"
+    },
+    "large": {
+      "label": "大",
+      "description": "本文と表が8%拡大されます"
+    },
+    "xlarge": {
+      "label": "特大",
+      "description": "可読性を最優先する場合"
+    }
+  },
+  "preview": {
+    "title": "ライブプレビュー",
+    "subtitle": "現在の設定がどのように表示されるか確認できます。",
+    "description": "フォントスケール、コントラスト、フォーマットオプションは、グローバルなテーブルとチャートにリアルタイムで反映されます。",
+    "badge": "月次承認率",
+    "amountLabel": "累計承認額",
+    "projectedPayout": "予想支払額",
+    "metricPrefix": "指標",
+    "unit": "件"
+  }
+}
+

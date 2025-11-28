@@ -1,0 +1,163 @@
+{
+  "drawer": {
+    "title": "加盟店詳細",
+    "subtitle": "加盟店コード",
+    "sections": {
+      "basicInfo": "基本情報",
+      "contactInfo": "連絡先情報",
+      "timestamps": "登録情報"
+    },
+    "fields": {
+      "mchtCode": "加盟店コード",
+      "mchtName": "加盟店名",
+      "status": "ステータス",
+      "bizType": "事業者タイプ",
+      "bizNo": "事業者登録番号",
+      "address": "住所",
+      "phone": "電話番号",
+      "email": "メールアドレス",
+      "registeredAt": "登録日",
+      "updatedAt": "更新日"
+    },
+    "actions": {
+      "viewDetail": "詳細ページを見る",
+      "viewTransactions": "取引履歴を見る"
+    }
+  },
+  "filters": {
+    "search": "検索",
+    "searchPlaceholder": "加盟店名またはコードで検索",
+    "status": "加盟店ステータス",
+    "reset": "リセット"
+  },
+  "stats": {
+    "title": "統計サマリー",
+    "total": {
+      "label": "全加盟店",
+      "description": "登録された加盟店数"
+    },
+    "active": {
+      "label": "アクティブ加盟店",
+      "description": "正常運営中"
+    },
+    "ready": {
+      "label": "準備中加盟店",
+      "description": "オープン準備状態"
+    },
+    "closed": {
+      "label": "終了・停止",
+      "description": "停止{{suspended}}件・非アクティブ{{inactive}}件"
+    }
+  },
+  "page": {
+    "register": {
+      "title": "加盟店登録",
+      "description": "新しい加盟店を登録します。",
+      "formTitle": "加盟店情報",
+      "formDescription": "登録する加盟店の情報を入力してください",
+      "error": "加盟店の登録に失敗しました。もう一度お試しください。"
+    },
+    "notFound": "加盟店情報が見つかりません。"
+  },
+  "statuses": {
+    "active": "アクティブ",
+    "ready": "準備中",
+    "suspended": "停止",
+    "inactive": "非アクティブ",
+    "closed": "終了",
+    "unknown": "確認が必要"
+  },
+  "export": {
+    "headers": {
+      "mchtCode": "加盟店コード",
+      "mchtName": "加盟店名",
+      "status": "ステータス",
+      "bizType": "事業者タイプ"
+    }
+  },
+  "table": {
+    "title": "加盟店一覧",
+    "description": "登録された加盟店を閲覧・管理できます",
+    "register": "登録",
+    "export": "エクスポート",
+    "showFilters": "フィルターを表示",
+    "hideFilters": "フィルターを非表示",
+    "error": "データの読み込み中にエラーが発生しました。",
+    "empty": "登録された加盟店がありません。",
+    "headers": {
+      "mchtCode": "加盟店コード",
+      "mchtName": "加盟店名",
+      "status": "ステータス",
+      "bizType": "事業者タイプ"
+    },
+    "pagination": {
+      "pageInfo": "{{total}}件中 {{start}}-{{end}}件を表示",
+      "pageInfoEmpty": "0件を表示"
+    }
+  },
+  "form": {
+    "fields": {
+      "mchtName": "加盟店名",
+      "mchtNamePlaceholder": "加盟店名を入力してください",
+      "bizType": "事業者タイプ",
+      "bizNo": "事業者登録番号",
+      "bizNoPlaceholder": "1234567890 (10桁の数字)",
+      "address": "住所",
+      "addressPlaceholder": "住所を入力してください",
+      "phone": "電話番号",
+      "phonePlaceholder": "010-1234-5678",
+      "email": "メールアドレス",
+      "emailPlaceholder": "example@domain.com",
+      "status": "ステータス",
+      "select": "選択してください",
+      "bizTypeOptions": {
+        "INDIVIDUAL": "個人事業者",
+        "CORPORATION": "法人事業者",
+        "FREELANCER": "フリーランサー"
+      }
+    },
+    "actions": {
+      "submitting": "登録中...",
+      "register": "登録する"
+    },
+    "errors": {
+      "mchtNameRequired": "加盟店名を入力してください。",
+      "bizTypeRequired": "事業者タイプを選択してください。",
+      "bizNoRequired": "事業者登録番号を入力してください。",
+      "bizNoInvalid": "正しい事業者登録番号の形式ではありません。（10桁の数字）",
+      "addressRequired": "住所を入力してください。",
+      "phoneRequired": "電話番号を入力してください。",
+      "phoneInvalid": "正しい電話番号の形式ではありません。",
+      "emailRequired": "メールアドレスを入力してください。",
+      "emailInvalid": "正しいメールアドレスの形式ではありません。"
+    }
+  },
+  "detail": {
+    "stats": {
+      "title": "統計サマリー",
+      "totalTransactions": "総取引件数",
+      "totalAmount": "総取引金額",
+      "approvalRate": "承認率",
+      "failedCount": "失敗件数",
+      "transactionsUnit": "件",
+      "totalTransactionsDesc": "{{merchantName}}累積取引",
+      "totalAmountDesc": "{{merchantName}}全体金額",
+      "approvalRateDesc": "承認{{count}}件",
+      "failedCountDesc": "{{merchantName}}失敗取引"
+    }
+  },
+  "transactions": {
+    "title": "取引履歴",
+    "viewAll": "すべて表示 →",
+    "loading": "取引履歴を読み込み中...",
+    "empty": "取引履歴がありません。",
+    "headers": {
+      "id": "取引コード",
+      "amount": "金額",
+      "status": "ステータス",
+      "payMethod": "決済手段",
+      "createdAt": "決済時刻"
+    }
+  }
+}
+

@@ -1,0 +1,67 @@
+{
+  "sidebar": {
+    "sections": {
+      "overview": "Monitoring",
+      "system": "System"
+    },
+    "items": {
+      "dashboard": "Dashboard",
+      "transactions": "Transactions",
+      "analytics": "Analytics",
+      "merchants": "Merchants",
+      "settlements": "Settlements",
+      "systemHealth": "System Status",
+      "settings": "Settings",
+      "logout": "Logout"
+    },
+    "aria": {
+      "expand": "Expand sidebar",
+      "collapse": "Collapse sidebar",
+      "open": "Open sidebar"
+    }
+  },
+  "header": {
+    "tagline": "PaysByPays",
+    "description": "Monitor payment operations in real time.",
+    "languageBadge": "Language",
+    "dateBadge": "Date",
+    "currencyBadge": "Currency",
+    "back": "Go back",
+    "openSidebar": "Open sidebar",
+    "themeToggle": {
+      "label": "Toggle theme",
+      "light": "Light mode",
+      "dark": "Dark mode",
+      "system": "System"
+    }
+  },
+  "languageSwitcher": {
+    "label": "Language switcher",
+    "ko": "Korean",
+    "en": "English",
+    "ja": "Japanese"
+  },
+  "pages": {
+    "dashboard": {
+      "title": "Payment Overview",
+      "description": "Track live payment activity and anomalies."
+    },
+    "analytics": {
+      "title": "Analytics",
+      "description": "Analyze transaction data from various perspectives"
+    },
+    "merchants": {
+      "title": "Merchants",
+      "description": "View and manage merchant listings"
+    },
+    "settlements": {
+      "title": "Settlements",
+      "description": "View scheduled/completed settlement details and payment schedules by merchant."
+    },
+    "systemHealth": {
+      "title": "System Status",
+      "description": "Monitor PaysByPays core API response status and latency changes in real time."
+    }
+  }
+}
+

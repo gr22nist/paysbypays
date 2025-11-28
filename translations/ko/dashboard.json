@@ -1,0 +1,99 @@
+{
+  "title": "결제 개요",
+  "description": "실시간 거래 현황과 이상 징후를 추적합니다.",
+  "sections": {
+    "summary": {
+      "title": "통계 요약",
+      "description": "전체 데이터 기준 주요 지표",
+      "metrics": {
+        "totalVolume": {
+          "label": "총 거래 금액",
+          "description": "누적 금액"
+        },
+        "totalCount": {
+          "label": "거래 건수",
+          "description": "누적 거래"
+        },
+        "approvalRate": {
+          "label": "승인률",
+          "description": "누적 승인 비율"
+        },
+        "averageAmount": {
+          "label": "평균 거래금액",
+          "description": "거래당 평균"
+        }
+      }
+    },
+    "trend": {
+      "title": "거래 추이",
+      "description": "결제 상태별 추세",
+      "unit": "단위: 건",
+      "empty": "거래 데이터가 없습니다."
+    },
+    "topAmount": {
+      "title": "최다 거래 금액 가맹점",
+      "description": "총 거래 금액 기준 TOP5",
+      "empty": "거래 데이터가 없습니다."
+    },
+    "topApproval": {
+      "title": "최다 승인 가맹점",
+      "description": "승인 건수 기준 TOP5",
+      "empty": "거래 데이터가 없습니다."
+    },
+    "systemHealth": {
+      "title": "시스템 상태",
+      "description": "핵심 API 실시간 모니터링",
+      "latencyInfo": "응답 지연 기준",
+      "threshold": {
+        "healthy": { "label": "정상", "range": "≤ 800ms", "description": "권장 응답" },
+        "degraded": { "label": "지연", "range": "800 ~ 1,500ms", "description": "지연 감지" },
+        "down": { "label": "오류", "range": "≥ 1,500ms", "description": "즉시 조치" }
+      },
+      "updated": "{{time}} 업데이트",
+      "noUpdate": "업데이트 없음",
+      "auto": {
+        "running": "자동 갱신 중",
+        "idle": "대기 중"
+      },
+      "viewDetail": "자세히 보기",
+      "latency": "{{latency}}ms 응답",
+      "noLatency": "지연 정보 없음",
+      "refresh": "헬스 데이터 새로고침"
+    },
+    "recent": {
+      "title": "최근 거래",
+      "description": "최신 거래 5건을 빠르게 확인하세요",
+      "empty": "거래 내역이 없습니다.",
+      "viewAll": "전체 거래 내역 보기",
+      "tableHeaders": {
+        "id": "거래 코드",
+        "merchant": "가맹점",
+        "amount": "금액",
+        "status": "상태",
+        "paymentMethod": "결제 수단",
+        "createdAt": "결제 시각"
+      }
+    },
+    "merchantStatus": {
+      "title": "가맹점 상태 요약",
+      "loading": "가맹점 정보를 불러오는 중...",
+      "total": "전체 가맹점",
+      "active": "활성 가맹점",
+      "inactive": "비활성 가맹점",
+      "inactiveNote": "(최근 7일 거래 없음)",
+      "new": "신규 가맹점",
+      "newNote": "(최근 30일)",
+      "viewAll": "가맹점 관리 보기"
+    },
+    "settlementAlert": {
+      "title": "정산 예정 알림",
+      "loading": "정산 정보를 불러오는 중...",
+      "empty": "예정된 정산이 없습니다.",
+      "delayed": "지연된 정산",
+      "today": "오늘 정산 예정",
+      "tomorrow": "내일 정산 예정",
+      "viewAll": "정산 현황 보기"
+    }
+  }
+}
+
