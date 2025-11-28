@@ -7,6 +7,7 @@ import { useMerchants } from "@/hooks/useMerchants";
 import { useTransactionSummary } from "@/hooks/useTransactionSummary";
 import { useTransactionChart } from "@/hooks/useTransactionChart";
 import { useCommonCodes } from "@/hooks/useCommonCodes";
+import { getPayTypeTranslationKey } from "@/data/pay-types";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import { SystemHealthCard } from "@/components/health/SystemHealthCard";
 import { useDisplayFormat } from "@/hooks/useDisplayFormat";
@@ -62,12 +63,24 @@ export default function Home() {
       map.set(type.toUpperCase(), label);
     });
 
-    // API description으로 보완 (번역에 없는 경우만)
+    // API description으로 보완 (번역 키가 없는 경우만)
     if (payTypes) {
       payTypes.forEach((pt) => {
         const upperType = pt.type.toUpperCase();
-        if (!map.has(upperType) && pt.description) {
-          map.set(upperType, pt.description);
+        if (!map.has(upperType)) {
+          // 번역 키를 먼저 시도
+          const translationKey = getPayTypeTranslationKey(pt.type);
+          if (translationKey) {
+            const translatedLabel = t(translationKey);
+            const isMissing = translatedLabel.includes("[MISSING:") || translatedLabel === translationKey;
+            if (!isMissing) {
+              map.set(upperType, translatedLabel);
+            } else if (pt.description) {
+              map.set(upperType, pt.description);
+            }
+          } else if (pt.description) {
+            map.set(upperType, pt.description);
+          }
         }
       });
     }

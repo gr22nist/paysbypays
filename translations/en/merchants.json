@@ -28,10 +28,13 @@
     "search": "Search",
     "searchPlaceholder": "Search by merchant name or code",
     "status": "Merchant Status",
+    "all": "All",
+    "clear": "All",
     "reset": "Reset"
   },
   "stats": {
     "title": "Statistics Summary",
+    "description": "Merchant status statistics",
     "total": {
       "label": "Total Merchants",
       "description": "Number of registered merchants"

@@ -104,7 +104,7 @@ export function useSettlements(): UseSettlementsResult {
         timeline,
       });
     } catch (err) {
-      setError(err instanceof Error ? err : new Error("정산 데이터를 불러오지 못했습니다."));
+      setError(err instanceof Error ? err : new Error(t("settlements:errors.loadFailed")));
       const fallbackRecords = mergeSettlementRecords([]);
       setData({
         summary: summarizeSettlements(fallbackRecords),
@@ -114,7 +114,7 @@ export function useSettlements(): UseSettlementsResult {
     } finally {
       setIsLoading(false);
     }
-  }, [buildTimeline]);
+  }, [buildTimeline, t]);
 
   useEffect(() => {
     fetchData();

@@ -37,7 +37,9 @@
     "fee": "手数料",
     "netAmount": "実受取額",
     "scheduledDate": "支払予定日",
-    "payoutDate": "支払日"
+    "payoutDate": "支払日",
+    "averageTransactionAmount": "平均取引金額",
+    "averagePerTransaction": "件当たり平均"
   },
   "units": {
     "transactions": "件",
@@ -124,6 +126,15 @@
     "minutesAgo": "{{minutes}}分前",
     "hoursAgo": "{{hours}}時間前",
     "daysAgo": "{{days}}日前"
+  },
+  "weekdays": {
+    "sun": "日",
+    "mon": "月",
+    "tue": "火",
+    "wed": "水",
+    "thu": "木",
+    "fri": "金",
+    "sat": "土"
   }
 }
 

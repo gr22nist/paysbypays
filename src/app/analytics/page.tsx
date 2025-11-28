@@ -277,7 +277,7 @@ export default function AnalyticsPage() {
             </div>
           ) : (
             <>
-              <AnalyticsStatsPanel stats={overallStats} />
+              <AnalyticsStatsPanel stats={overallStats} panelClass={panelClass} />
 
               {overallStats && <AverageAmountCard averageAmount={overallStats.averageAmount} />}
 

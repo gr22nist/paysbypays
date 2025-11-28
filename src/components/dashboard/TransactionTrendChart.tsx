@@ -36,7 +36,7 @@ export function TransactionTrendChart({
     if (weekdayMatch) {
       const dayKey = weekdayMatch[1];
       const translatedDay = t(`common:weekdays.${dayKey}`);
-      translated = translated.replace(`common:weekdays.${dayKey}`, translatedDay);
+      translated = translated.replace(`(common:weekdays.${dayKey})`, `(${translatedDay})`);
     }
     
     // "common:time.hour" 형식의 번역 키가 포함된 경우 번역

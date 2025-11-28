@@ -59,7 +59,7 @@ export function SettlementRecordsTable({
   const statusMeta = {
     scheduled: { 
       label: t("settlements:statuses.scheduled"), 
-      className: "bg-orange-100 text-orange-800" 
+      className: "bg-brand-primary/10 text-brand-primary border border-brand-primary/20" 
     },
     processing: { 
       label: t("settlements:statuses.processing"), 

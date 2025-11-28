@@ -93,6 +93,10 @@
       "today": "Scheduled Today",
       "tomorrow": "Scheduled Tomorrow",
       "viewAll": "View Settlements"
+    },
+    "todayMetrics": {
+      "title": "Today's Key Metrics",
+      "loading": "Loading today's metrics..."
     }
   }
 }

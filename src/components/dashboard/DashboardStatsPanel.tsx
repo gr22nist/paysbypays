@@ -47,20 +47,18 @@ export function DashboardStatsPanel({
                 <span className="!text-[var(--text-subtle)] !text-3xl sm:!text-4xl !font-semibold">₩0</span>
               ),
               description: t("dashboard:sections.summary.metrics.totalVolume.description"),
-              icon: <span className="text-lg font-semibold">₩</span>,
             },
             {
               label: t("dashboard:sections.summary.metrics.totalCount.label"),
               value: (
                 <span>
-                  <span className="!text-[var(--text-strong)] !text-3xl sm:!text-4xl !font-semibold">
+                  <span className="!text-brand-primary !text-3xl sm:!text-4xl !font-semibold">
                     {totalCount.toLocaleString()}
                   </span>
                   <span className="text-lg text-[var(--text-subtle)] ml-1">{t("common:units.transactions")}</span>
                 </span>
               ),
               description: t("dashboard:sections.summary.metrics.totalCount.description"),
-              icon: <span className="text-base font-semibold">#</span>,
             },
             {
               label: t("dashboard:sections.summary.metrics.approvalRate.label"),
@@ -70,7 +68,6 @@ export function DashboardStatsPanel({
                 </span>
               ),
               description: t("dashboard:sections.summary.metrics.approvalRate.description"),
-              icon: <span className="text-base font-semibold">✓</span>,
             },
             {
               label: t("dashboard:sections.summary.metrics.averageAmount.label"),
@@ -82,7 +79,6 @@ export function DashboardStatsPanel({
                 <span className="!text-[var(--text-subtle)] !text-3xl sm:!text-4xl !font-semibold">₩0</span>
               ),
               description: t("dashboard:sections.summary.metrics.averageAmount.description"),
-              icon: <span className="text-xs font-semibold">AVG</span>,
             },
           ]}
         />

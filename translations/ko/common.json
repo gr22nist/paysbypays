@@ -40,7 +40,9 @@
     "fee": "수수료",
     "netAmount": "실수령액",
     "scheduledDate": "지급 예정일",
-    "payoutDate": "지급일"
+    "payoutDate": "지급일",
+    "averageTransactionAmount": "평균 거래 금액",
+    "averagePerTransaction": "건당 평균"
   },
   "units": {
     "transactions": "건",

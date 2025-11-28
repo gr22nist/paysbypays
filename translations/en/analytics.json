@@ -5,6 +5,7 @@
   "panels": {
     "overallStats": {
       "title": "Overall Statistics",
+      "description": "Overall transaction statistics summary",
       "totalCount": {
         "label": "Total Transactions",
         "description": "All transactions"
@@ -54,6 +55,16 @@
       "title": "Transaction Trend by Time",
       "description": "Daily transaction trend for {{period}} period"
     }
+  },
+  "statusMapping": {
+    "approved": "Approved",
+    "failed": "Failed",
+    "pending": "Pending",
+    "cancelled": "Cancelled",
+    "other": "Other"
+  },
+  "approvalRate": {
+    "label": "Approval Rate"
   }
 }
 

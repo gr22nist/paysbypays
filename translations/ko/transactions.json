@@ -64,7 +64,28 @@
     "device": "단말기",
     "easyPay": "간편결제",
     "subscription": "정기결제",
-    "other": "기타"
+    "other": "기타",
+    "CARD": "신용카드",
+    "TERMINAL": "단말기",
+    "MOBILE": "모바일",
+    "BANK_TRANSFER": "계좌이체",
+    "VIRTUAL_ACCOUNT": "가상계좌",
+    "QR": "QR 결제",
+    "CASH": "현금",
+    "ONLINE": "온라인",
+    "DEVICE": "단말기",
+    "EASY_PAY": "간편결제",
+    "SUBSCRIPTION": "정기결제",
+    "VACT": "가상계좌",
+    "BILLING": "정기결제"
+  },
+  "statuses": {
+    "APPROVED": "승인",
+    "PENDING": "대기",
+    "FAILED": "실패",
+    "CANCELLED": "취소",
+    "DECLINED": "거부",
+    "SUCCESS": "승인"
   },
   "detail": {
     "title": "거래 상세",

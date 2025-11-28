@@ -5,6 +5,7 @@
   "panels": {
     "overallStats": {
       "title": "전체 통계",
+      "description": "전체 거래 통계 요약",
       "totalCount": {
         "label": "총 거래 건수",
         "description": "전체 거래"

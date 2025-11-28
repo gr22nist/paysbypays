@@ -29,6 +29,7 @@ interface MerchantTableProps {
   sortField: MerchantSortField | null;
   sortDirection: MerchantSortDirection;
   showFilters: boolean;
+  hasActiveFilters?: boolean;
   onSort: (field: MerchantSortField) => void;
   onPageChange: (page: number) => void;
   onPageSizeChange: (size: number) => void;
@@ -49,6 +50,7 @@ export function MerchantTable({
   sortField,
   sortDirection,
   showFilters,
+  hasActiveFilters = false,
   onSort,
   onPageChange,
   onPageSizeChange,
@@ -91,26 +93,34 @@ export function MerchantTable({
               <Icon name="add" size={16} />
               {t("merchants:table.register")}
             </Link>
-            <div className="flex items-center gap-2">
-              <ExportFormatSelect
-                value={exportFormat}
-                onChange={(value) => setExportFormat(value)}
-                size="md"
-              />
-              <button
-                type="button"
-                onClick={handleExport}
-                className="micro-button rounded-lg border border-[var(--border-subtle)] bg-[var(--surface)] px-4 py-2 text-sm font-medium text-[var(--text-strong)] transition-colors hover:border-brand-primary hover:text-brand-primary"
-              >
-                {t("merchants:table.export")}
-              </button>
-            </div>
             <button
               type="button"
               onClick={onToggleFilters}
-              className="micro-button inline-flex items-center rounded-lg border border-[var(--border-subtle)] px-3 py-2 text-sm font-medium text-[var(--text-strong)] hover:border-brand-primary hover:text-brand-primary transition-colors"
+              className={`micro-button inline-flex h-10 items-center gap-2 rounded-xl border px-4 text-sm font-medium transition ${
+                hasActiveFilters
+                  ? "border-brand-primary bg-brand-primary/10 text-brand-primary"
+                  : "border-[var(--border-subtle)] text-[var(--text-strong)] hover:border-brand-primary hover:text-brand-primary"
+              }`}
             >
+              <Icon name="settings" size={16} />
               {showFilters ? t("merchants:table.hideFilters") : t("merchants:table.showFilters")}
+              {hasActiveFilters && (
+                <span className="ml-1 flex h-5 w-5 items-center justify-center rounded-full bg-brand-primary text-xs font-semibold text-white">
+                  !
+                </span>
+              )}
+            </button>
+            <ExportFormatSelect
+              value={exportFormat}
+              onChange={(value) => setExportFormat(value)}
+              size="md"
+            />
+            <button
+              type="button"
+              onClick={handleExport}
+              className="micro-button rounded-lg border border-[var(--border-subtle)] bg-[var(--surface)] px-4 py-2 text-sm font-medium text-[var(--text-strong)] transition-colors hover:border-brand-primary hover:text-brand-primary"
+            >
+              {t("merchants:table.export")}
             </button>
           </div>
         }

@@ -37,12 +37,14 @@
     "fee": "Fee",
     "netAmount": "Net Amount",
     "scheduledDate": "Scheduled Date",
-    "payoutDate": "Payout Date"
+    "payoutDate": "Payout Date",
+    "averageTransactionAmount": "Average Transaction Amount",
+    "averagePerTransaction": "Average per Transaction"
   },
   "units": {
     "transactions": "tx",
     "currency": "$",
-    "count": "",
+    "count": "items",
     "hour": "h"
   },
   "states": {
@@ -125,6 +127,15 @@
     "minutesAgo": "{{minutes}} minutes ago",
     "hoursAgo": "{{hours}} hours ago",
     "daysAgo": "{{days}} days ago"
+  },
+  "weekdays": {
+    "sun": "Sun",
+    "mon": "Mon",
+    "tue": "Tue",
+    "wed": "Wed",
+    "thu": "Thu",
+    "fri": "Fri",
+    "sat": "Sat"
   }
 }
 

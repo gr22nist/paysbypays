@@ -98,6 +98,7 @@ const paginatedRecords = useMemo(
           summary={summary}
           loading={isLoading}
           formatSummaryAmount={formatSummaryAmount}
+          panelClass={PANEL_CLASS}
         />
 
         <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

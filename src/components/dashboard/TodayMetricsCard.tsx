@@ -159,7 +159,7 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
   if (todayLoading) {
     return (
       <div className={`micro-card rounded-xl border border-[var(--border-subtle)] bg-[var(--surface)] p-6 shadow-sm ${className}`}>
-        <div className="text-sm text-[var(--text-muted)]">오늘의 지표를 불러오는 중...</div>
+        <div className="text-sm text-[var(--text-muted)]">{t("dashboard:sections.todayMetrics.loading")}</div>
       </div>
     );
   }
@@ -174,7 +174,7 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
       className={`micro-card rounded-xl border border-[var(--border-subtle)] bg-[var(--surface)] p-6 shadow-sm ${className}`}
     >
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="text-sm font-semibold text-[var(--text-strong)]">오늘의 주요 지표</h3>
+        <h3 className="text-sm font-semibold text-[var(--text-strong)]">{t("dashboard:sections.todayMetrics.title")}</h3>
         <Icon name="calendar" size={16} className="text-[var(--text-muted)]" />
       </div>
 

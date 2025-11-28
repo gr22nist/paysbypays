@@ -16,23 +16,26 @@ interface SettlementStatsPanelProps {
   summary: SettlementSummary;
   loading: boolean;
   formatSummaryAmount: (amount: number) => string;
+  panelClass: string;
 }
 
 export function SettlementStatsPanel({
   summary,
   loading,
   formatSummaryAmount,
+  panelClass,
 }: SettlementStatsPanelProps) {
   const { t, tWithParams } = useTranslation();
   
   return (
-    <>
+    <div className={`micro-card ${panelClass}`}>
       <SectionHeaderBlock
         title={t("settlements:stats.title")}
         description={t("settlements:stats.description")}
-        containerClassName="px-0 pt-0"
+        containerClassName="px-6 pt-6"
       />
-      <StatsPanel
+      <div className="px-6 pb-6 pt-4">
+        <StatsPanel
         columns={4}
         loading={loading}
         items={[
@@ -44,7 +47,6 @@ export function SettlementStatsPanel({
               </span>
             ),
             description: t("settlements:stats.totalScheduled.description"),
-            icon: <span className="text-lg font-semibold">₩</span>,
           },
           {
             label: t("settlements:stats.netAmount.label"),
@@ -54,13 +56,12 @@ export function SettlementStatsPanel({
               </span>
             ),
             description: t("settlements:stats.netAmount.description"),
-            icon: <span className="text-base font-semibold">NET</span>,
           },
           {
             label: t("settlements:stats.scheduledProcessing.label"),
             value: (
               <span>
-                <span className="!text-[var(--text-strong)] !text-3xl sm:!text-4xl !font-semibold">
+                <span className="!text-brand-primary !text-3xl sm:!text-4xl !font-semibold">
                   {summary.scheduledCount.toLocaleString()}
                 </span>
                 <span className="text-lg text-[var(--text-subtle)] ml-1">
@@ -69,13 +70,12 @@ export function SettlementStatsPanel({
               </span>
             ),
             description: t("settlements:stats.scheduledProcessing.description"),
-            icon: <span className="text-sm font-semibold">⏳</span>,
           },
           {
             label: t("settlements:stats.completedDelayed.label"),
             value: (
               <span>
-                <span className="!text-orange-500 !text-3xl sm:!text-4xl !font-semibold">
+                <span className="!text-brand-secondary !text-3xl sm:!text-4xl !font-semibold">
                   {summary.completedCount.toLocaleString()}
                 </span>
                 <span className="text-lg text-[var(--text-subtle)] ml-1">
@@ -87,11 +87,11 @@ export function SettlementStatsPanel({
               </span>
             ),
             description: t("settlements:stats.completedDelayed.description"),
-            icon: <span className="text-sm font-semibold">✔️</span>,
           },
         ]}
-      />
-    </>
+        />
+      </div>
+    </div>
   );
 }
 

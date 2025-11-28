@@ -85,6 +85,9 @@
       "payoutDate": "Payout Date",
       "status": "Status"
     }
+  },
+  "errors": {
+    "loadFailed": "Failed to load settlement data."
   }
 }
 

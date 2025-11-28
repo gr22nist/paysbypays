@@ -5,6 +5,7 @@
   "panels": {
     "overallStats": {
       "title": "全体統計",
+      "description": "全体取引統計サマリー",
       "totalCount": {
         "label": "総取引件数",
         "description": "全取引"
@@ -54,6 +55,16 @@
       "title": "時間帯別取引推移",
       "description": "{{period}}期間の日別取引推移"
     }
+  },
+  "statusMapping": {
+    "approved": "承認",
+    "failed": "失敗",
+    "pending": "保留",
+    "cancelled": "キャンセル",
+    "other": "その他"
+  },
+  "approvalRate": {
+    "label": "承認率"
   }
 }
 

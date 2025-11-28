@@ -3,6 +3,7 @@
 import { StatsPanel } from "@hua-labs/ui";
 import { useTranslation } from "@hua-labs/i18n-core";
 import { useDisplayFormat } from "@/hooks/useDisplayFormat";
+import { SectionHeaderBlock } from "@/components/sections/SectionHeaderBlock";
 
 interface OverallStats {
   totalCount: number;
@@ -15,9 +16,10 @@ interface OverallStats {
 
 interface AnalyticsStatsPanelProps {
   stats: OverallStats | null;
+  panelClass: string;
 }
 
-export function AnalyticsStatsPanel({ stats }: AnalyticsStatsPanelProps) {
+export function AnalyticsStatsPanel({ stats, panelClass }: AnalyticsStatsPanelProps) {
   const { t, tWithParams } = useTranslation();
   const { formatCurrency } = useDisplayFormat();
 
@@ -26,10 +28,16 @@ export function AnalyticsStatsPanel({ stats }: AnalyticsStatsPanelProps) {
   const countUnit = t("common:units.transactions");
 
   return (
-    <StatsPanel
-      title={t("analytics:panels.overallStats.title")}
-      columns={4}
-      items={[
+    <div className={`micro-card ${panelClass}`}>
+      <SectionHeaderBlock
+        title={t("analytics:panels.overallStats.title")}
+        description={t("analytics:panels.overallStats.description")}
+        containerClassName="px-6 pt-6"
+      />
+      <div className="px-6 pb-6 pt-4">
+        <StatsPanel
+          columns={4}
+          items={[
         {
           label: t("analytics:panels.overallStats.totalCount.label"),
           value: (
@@ -78,7 +86,9 @@ export function AnalyticsStatsPanel({ stats }: AnalyticsStatsPanelProps) {
           description: t("analytics:panels.overallStats.failedCount.description"),
         },
       ]}
-    />
+        />
+      </div>
+    </div>
   );
 }
 

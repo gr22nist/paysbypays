@@ -95,20 +95,40 @@ export default function TransactionsPage() {
 
   const paymentStatusOptions = useMemo(
     () =>
-      paymentStatuses.map((status) => ({
-        value: status.code,
-        label: status.description,
-      })),
-    [paymentStatuses]
+      paymentStatuses.map((status) => {
+        const statusKey = status.code.toUpperCase();
+        const translationKey = `transactions:statuses.${statusKey}`;
+        const translatedLabel = t(translationKey);
+        // 번역 키가 없으면 (MISSING으로 표시되거나 키 자체가 반환되면) 원본 description 사용
+        const isMissing = translatedLabel.includes("[MISSING:") || translatedLabel === translationKey;
+        return {
+          value: status.code,
+          label: isMissing ? status.description : translatedLabel,
+        };
+      }),
+    [paymentStatuses, t]
   );
 
   const payTypeOptions = useMemo(
     () =>
-      payTypes.map((type) => ({
-        value: type.type,
-        label: type.description,
-      })),
-    [payTypes]
+      payTypes.map((type) => {
+        // getPayTypeTranslationKey를 사용하여 VACT, BILLING 등의 매핑도 처리
+        const translationKey = getPayTypeTranslationKey(type.type);
+        if (translationKey) {
+          const translatedLabel = t(translationKey);
+          const isMissing = translatedLabel.includes("[MISSING:") || translatedLabel === translationKey;
+          return {
+            value: type.type,
+            label: isMissing ? type.description : translatedLabel,
+          };
+        }
+        // 번역 키가 없으면 원본 description 사용
+        return {
+          value: type.type,
+          label: type.description,
+        };
+      }),
+    [payTypes, t]
   );
 
   const hasActiveFilters = useMemo(
