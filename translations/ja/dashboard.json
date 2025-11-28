@@ -93,6 +93,10 @@
       "today": "本日精算予定",
       "tomorrow": "明日精算予定",
       "viewAll": "精算状況を見る"
+    },
+    "todayMetrics": {
+      "title": "今日の主要指標",
+      "loading": "今日の指標を読み込み中..."
     }
   }
 }

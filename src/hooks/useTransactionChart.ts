@@ -40,10 +40,8 @@ export function useTransactionChart(
       let key: string;
 
       if (bucket === "hour") {
-        // 시간 단위: YYYY-MM-DD HH:00
         key = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")} ${String(date.getHours()).padStart(2, "0")}:00`;
       } else {
-        // 일 단위: YYYY-MM-DD
         key = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
       }
 
@@ -54,19 +52,15 @@ export function useTransactionChart(
       const group = grouped.get(key)!;
       const status = tx.status.toLowerCase();
 
-      // 실제 API는 SUCCESS와 FAILED만 사용
       if (status === "success") {
         group.approved++;
       } else {
-        // FAILED 또는 알 수 없는 상태는 실패로 처리
         group.failed++;
       }
     });
 
-    // 날짜순으로 정렬
     const sortedKeys = Array.from(grouped.keys()).sort();
 
-    // 카테고리 생성 (번역 키 포함)
     const categories = sortedKeys.map((key) => {
       const date = new Date(key);
       if (bucket === "hour") {
@@ -78,7 +72,6 @@ export function useTransactionChart(
       }
     });
 
-    // 시리즈 데이터 생성
     const approvedData: number[] = [];
     const failedData: number[] = [];
 

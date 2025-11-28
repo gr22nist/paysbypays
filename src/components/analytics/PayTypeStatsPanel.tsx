@@ -3,6 +3,7 @@
 import { SectionHeaderBlock } from "@/components/sections/SectionHeaderBlock";
 import { useTranslation } from "@hua-labs/i18n-core";
 import { useDisplayFormat } from "@/hooks/useDisplayFormat";
+import { getPayTypeTranslationKey } from "@/data/pay-types";
 
 interface PayTypeStat {
   type: string;
@@ -35,26 +36,30 @@ export function PayTypeStatsPanel({ stats, panelClass }: PayTypeStatsPanelProps)
         />
         <div className="px-6 pb-6 pt-4">
           <div className="space-y-3">
-            {stats.map((stat) => (
-              <div key={stat.type} className="flex items-center justify-between">
-                <div className="flex-1">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-sm font-medium text-[var(--text-strong)]">
-                      {stat.type}
-                    </span>
-                    <span className="text-sm text-[var(--text-muted)]">
-                      {stat.count.toLocaleString()}{countUnit} ({stat.percentage.toFixed(1)}%)
-                    </span>
-                  </div>
-                  <div className="h-2 w-full rounded-full bg-gray-200">
-                    <div
-                      className="h-2 rounded-full bg-brand-primary transition-all"
-                      style={{ width: `${stat.percentage}%` }}
-                    />
+            {stats.map((stat) => {
+              const translationKey = getPayTypeTranslationKey(stat.type);
+              const displayName = translationKey ? t(translationKey) : stat.type;
+              return (
+                <div key={stat.type} className="flex items-center justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-sm font-medium text-[var(--text-strong)]">
+                        {displayName}
+                      </span>
+                      <span className="text-sm text-[var(--text-muted)]">
+                        {stat.count.toLocaleString()}{countUnit} ({stat.percentage.toFixed(1)}%)
+                      </span>
+                    </div>
+                    <div className="h-2 w-full rounded-full bg-gray-200">
+                      <div
+                        className="h-2 rounded-full bg-brand-primary transition-all"
+                        style={{ width: `${stat.percentage}%` }}
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
@@ -69,12 +74,14 @@ export function PayTypeStatsPanel({ stats, panelClass }: PayTypeStatsPanelProps)
           <div className="space-y-3">
             {stats.map((stat) => {
               const amountPercentage = totalAmount > 0 ? (stat.amount / totalAmount) * 100 : 0;
+              const translationKey = getPayTypeTranslationKey(stat.type);
+              const displayName = translationKey ? t(translationKey) : stat.type;
               return (
                 <div key={stat.type} className="flex items-center justify-between">
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-1">
                       <span className="text-sm font-medium text-[var(--text-strong)]">
-                        {stat.type}
+                        {displayName}
                       </span>
                       <span className="text-sm text-[var(--text-muted)]">
                         {formatCurrency(stat.amount)} ({amountPercentage.toFixed(1)}%)

@@ -8,13 +8,14 @@ import { useFilterStore } from "@/store/filter-store";
 import { MerchantStatsPanel } from "@/components/merchants/MerchantStatsPanel";
 import { MerchantFilterPanel } from "@/components/merchants/MerchantFilterPanel";
 import { MerchantTable } from "@/components/merchants/MerchantTable";
+import { getMerchantStatusMeta } from "@/data/merchant-status";
 
 type MerchantSortField = "mchtCode" | "mchtName" | "status" | "bizType";
 type MerchantSortDirection = "asc" | "desc" | null;
 
 export default function MerchantsPage() {
   const { t } = useTranslation();
-  const { merchantSearchQuery, setMerchantSearchQuery, resetMerchantFilters } =
+  const { merchantSearchQuery, merchantStatus, setMerchantSearchQuery, setMerchantStatus, resetMerchantFilters } =
     useFilterStore();
   const [currentPage, setCurrentPage] = useState(0);
   const [pageSize, setPageSize] = useState(25);
@@ -29,8 +30,8 @@ export default function MerchantsPage() {
   });
 
   const hasActiveFilters = useMemo(
-    () => Boolean((merchantSearchQuery || "").trim()),
-    [merchantSearchQuery]
+    () => Boolean((merchantSearchQuery || "").trim()) || Boolean(merchantStatus),
+    [merchantSearchQuery, merchantStatus]
   );
 
   const stats = useMemo(() => {
@@ -65,6 +66,11 @@ export default function MerchantsPage() {
       });
     }
 
+    if (merchantStatus) {
+      const normalize = (status?: string) => (status || "").toUpperCase();
+      merchants = merchants.filter((m) => normalize(m.status) === merchantStatus.toUpperCase());
+    }
+
     if (sortField && sortDirection) {
       merchants = [...merchants].sort((a, b) => {
         let aValue: string = "";
@@ -95,11 +101,10 @@ export default function MerchantsPage() {
     }
 
     return merchants;
-  }, [merchantsData, merchantSearchQuery, sortField, sortDirection]);
+  }, [merchantsData, merchantSearchQuery, merchantStatus, sortField, sortDirection]);
 
   const handleSort = (field: MerchantSortField) => {
     if (sortField === field) {
-      // 같은 필드 클릭 시: asc -> desc -> null 순환
       if (sortDirection === "asc") {
         setSortDirection("desc");
       } else if (sortDirection === "desc") {
@@ -109,7 +114,6 @@ export default function MerchantsPage() {
         setSortDirection("asc");
       }
     } else {
-      // 다른 필드 클릭 시: asc로 시작
       setSortField(field);
       setSortDirection("asc");
     }
@@ -134,6 +138,17 @@ export default function MerchantsPage() {
     return filteredMerchants.slice(pageStart, pageEnd);
   }, [filteredMerchants, pageStart, pageEnd]);
 
+  const statusOptions = useMemo(() => {
+    const statuses = ["ACTIVE", "READY", "SUSPENDED", "INACTIVE", "CLOSED"] as const;
+    return statuses.map((status) => {
+      const meta = getMerchantStatusMeta(status);
+      return {
+        value: status,
+        label: t(meta.labelKey),
+      };
+    });
+  }, [t]);
+
   return (
     <DashboardLayout
       title={t("layout:pages.merchants.title")}
@@ -141,14 +156,24 @@ export default function MerchantsPage() {
       activeItem="merchants"
     >
       <div className="flex flex-col gap-6">
-        <MerchantStatsPanel stats={stats} loading={isLoading} />
+        <MerchantStatsPanel 
+          stats={stats} 
+          loading={isLoading} 
+          panelClass="rounded-xl border border-[var(--border-subtle)] bg-[var(--surface)] shadow-sm"
+        />
 
         <MerchantFilterPanel
           searchQuery={merchantSearchQuery}
+          statusValue={merchantStatus}
           hasActiveFilters={hasActiveFilters}
           showFilters={showFilters}
+          statusOptions={statusOptions}
           onSearchChange={(value) => {
             setMerchantSearchQuery(value);
+            setCurrentPage(0);
+          }}
+          onStatusChange={(value) => {
+            setMerchantStatus(value);
             setCurrentPage(0);
           }}
           onReset={() => {
@@ -170,6 +195,7 @@ export default function MerchantsPage() {
           sortField={sortField}
           sortDirection={sortDirection}
           showFilters={showFilters}
+          hasActiveFilters={hasActiveFilters}
           onSort={handleSort}
           onPageChange={setCurrentPage}
           onPageSizeChange={setPageSize}

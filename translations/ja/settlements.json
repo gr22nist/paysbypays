@@ -73,6 +73,21 @@
   },
   "merchant": {
     "fallback": "加盟店 {{code}}"
+  },
+  "export": {
+    "headers": {
+      "merchantCode": "加盟店コード",
+      "merchantName": "加盟店名",
+      "grossAmount": "総額",
+      "feeAmount": "手数料",
+      "netAmount": "純受取額",
+      "scheduledDate": "支払予定日",
+      "payoutDate": "支払日",
+      "status": "状態"
+    }
+  },
+  "errors": {
+    "loadFailed": "精算データの読み込みに失敗しました。"
   }
 }
 

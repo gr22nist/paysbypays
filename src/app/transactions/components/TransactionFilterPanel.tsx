@@ -40,16 +40,16 @@ export function TransactionFilterPanel({
 
   return (
     <div
-      className={`micro-card ${panelClass} ${
+      className={`micro-card ${panelClass} transition-all duration-300 ease-in-out ${
         showFilters
-          ? "max-h-[500px] opacity-100 mb-0"
-          : "max-h-0 opacity-0 mb-0"
+          ? "max-h-[500px] opacity-100 translate-y-0 mb-0 overflow-visible"
+          : "max-h-0 opacity-0 -translate-y-2 mb-0 overflow-hidden"
       }`}
     >
-      <div className={`px-6 py-4 ${
+      <div className={`px-6 py-4 transition-all duration-300 ease-in-out ${
         showFilters 
-          ? "opacity-100" 
-          : "opacity-0"
+          ? "opacity-100 translate-y-0" 
+          : "opacity-0 -translate-y-2"
       }`}>
         <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
           <div className="w-full sm:flex-1 sm:min-w-[200px]">

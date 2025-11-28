@@ -14,7 +14,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
   const { formatCurrency } = useDisplayFormat();
   const { t } = useTranslation();
 
-  // 오늘 날짜 범위 계산
   const today = useMemo(() => {
     const now = new Date();
     const start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -24,7 +23,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
     };
   }, []);
 
-  // 어제 날짜 범위 계산
   const yesterday = useMemo(() => {
     const now = new Date();
     const yesterdayDate = new Date(now);
@@ -48,7 +46,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
     };
   }, []);
 
-  // 오늘 거래 데이터
   const { data: todayData, isLoading: todayLoading } = useTransactions({
     page: 0,
     size: 1000,
@@ -56,7 +53,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
     to: today.to,
   });
 
-  // 어제 거래 데이터
   const { data: yesterdayData } = useTransactions({
     page: 0,
     size: 1000,
@@ -64,7 +60,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
     to: yesterday.to,
   });
 
-  // 오늘 지표 계산
   const todayMetrics = useMemo(() => {
     if (!todayData?.content) {
       return {
@@ -93,7 +88,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
     };
   }, [todayData]);
 
-  // 어제 지표 계산
   const yesterdayMetrics = useMemo(() => {
     if (!yesterdayData?.content) {
       return {
@@ -120,7 +114,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
     };
   }, [yesterdayData]);
 
-  // 증감률 계산
   const changes = useMemo(() => {
     const amountChange =
       yesterdayMetrics.amount > 0
@@ -159,7 +152,7 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
   if (todayLoading) {
     return (
       <div className={`micro-card rounded-xl border border-[var(--border-subtle)] bg-[var(--surface)] p-6 shadow-sm ${className}`}>
-        <div className="text-sm text-[var(--text-muted)]">오늘의 지표를 불러오는 중...</div>
+        <div className="text-sm text-[var(--text-muted)]">{t("dashboard:sections.todayMetrics.loading")}</div>
       </div>
     );
   }
@@ -174,12 +167,11 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
       className={`micro-card rounded-xl border border-[var(--border-subtle)] bg-[var(--surface)] p-6 shadow-sm ${className}`}
     >
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="text-sm font-semibold text-[var(--text-strong)]">오늘의 주요 지표</h3>
+        <h3 className="text-sm font-semibold text-[var(--text-strong)]">{t("dashboard:sections.todayMetrics.title")}</h3>
         <Icon name="calendar" size={16} className="text-[var(--text-muted)]" />
       </div>
 
       <div className="space-y-4">
-        {/* 거래 금액 */}
         <div>
           <div className="mb-1 text-xs text-[var(--text-muted)]">{t("dashboard:sections.summary.metrics.totalVolume.label")}</div>
           <div className="flex items-baseline gap-2">
@@ -192,7 +184,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
           </div>
         </div>
 
-        {/* 거래 건수 */}
         <div>
           <div className="mb-1 text-xs text-[var(--text-muted)]">{t("dashboard:sections.summary.metrics.totalCount.label")}</div>
           <div className="flex items-baseline gap-2">
@@ -205,7 +196,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
           </div>
         </div>
 
-        {/* 승인률 */}
         <div>
           <div className="mb-1 text-xs text-[var(--text-muted)]">{t("dashboard:sections.summary.metrics.approvalRate.label")}</div>
           <div className="flex items-baseline gap-2">
@@ -218,7 +208,6 @@ export function TodayMetricsCard({ className = "" }: TodayMetricsCardProps) {
           </div>
         </div>
 
-        {/* 평균 거래금액 */}
         <div>
           <div className="mb-1 text-xs text-[var(--text-muted)]">{t("dashboard:sections.summary.metrics.averageAmount.label")}</div>
           <div className="flex items-baseline gap-2">

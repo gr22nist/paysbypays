@@ -7,6 +7,7 @@ import { useMerchants } from "@/hooks/useMerchants";
 import { useTransactionSummary } from "@/hooks/useTransactionSummary";
 import { useTransactionChart } from "@/hooks/useTransactionChart";
 import { useCommonCodes } from "@/hooks/useCommonCodes";
+import { getPayTypeTranslationKey } from "@/data/pay-types";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import { SystemHealthCard } from "@/components/health/SystemHealthCard";
 import { useDisplayFormat } from "@/hooks/useDisplayFormat";
@@ -19,18 +20,15 @@ import { MerchantStatusSummary } from "@/components/dashboard/MerchantStatusSumm
 
 export default function Home() {
   const { t } = useTranslation();
-  // 실제 API 호출 (대시보드에는 더 많은 데이터 표시)
   const { data: transactionsData, isLoading: transactionsLoading } = useTransactions({
     page: 0,
-    size: 50, // 대시보드에는 더 많은 거래 표시
+    size: 50,
   });
 
   const { data: summaryData, isLoading: summaryLoading } = useTransactionSummary();
 
-  // 가맹점 목록 로드 (가맹점 이름 매핑용)
-  const { data: merchantsData } = useMerchants({ size: 1000 }); // 충분히 큰 사이즈로 전체 가맹점 로드
+  const { data: merchantsData } = useMerchants({ size: 1000 });
 
-  // 가맹점 코드 -> 이름 매핑 생성
   const merchantNameMap = useMemo(() => {
     const map = new Map<string, string>();
     if (merchantsData?.content) {
@@ -41,12 +39,10 @@ export default function Home() {
     return map;
   }, [merchantsData]);
 
-  // 결제수단 매핑
   const { payTypes } = useCommonCodes();
   const payTypeMap = useMemo(() => {
     const map = new Map<string, string>();
     
-    // 번역된 결제수단 매핑
     const localizedMapping: Record<string, string> = {
       CARD: t("transactions:payTypes.card"),
       MOBILE: t("transactions:payTypes.mobile"),
@@ -62,12 +58,22 @@ export default function Home() {
       map.set(type.toUpperCase(), label);
     });
 
-    // API description으로 보완 (번역에 없는 경우만)
     if (payTypes) {
       payTypes.forEach((pt) => {
         const upperType = pt.type.toUpperCase();
-        if (!map.has(upperType) && pt.description) {
-          map.set(upperType, pt.description);
+        if (!map.has(upperType)) {
+          const translationKey = getPayTypeTranslationKey(pt.type);
+          if (translationKey) {
+            const translatedLabel = t(translationKey);
+            const isMissing = translatedLabel.includes("[MISSING:") || translatedLabel === translationKey;
+            if (!isMissing) {
+              map.set(upperType, translatedLabel);
+            } else if (pt.description) {
+              map.set(upperType, pt.description);
+            }
+          } else if (pt.description) {
+            map.set(upperType, pt.description);
+          }
         }
       });
     }
@@ -75,25 +81,16 @@ export default function Home() {
     return map;
   }, [payTypes, t]);
 
-  // 총 거래 금액 계산 (summaryData 우선)
   const totalVolume = summaryData?.totalAmount ?? 0;
-
-  // 거래 건수 계산
   const totalCount = summaryData?.totalCount ?? 0;
-
-  // 승인률 계산
   const approvalRate = summaryData?.approvalRate ?? 0;
-
-  // 평균 거래 금액 계산
   const averageAmount = summaryData?.averageAmount ?? (totalCount > 0 ? totalVolume / totalCount : 0);
 
-  // 차트 데이터 생성
   const chartData = useTransactionChart(
     transactionsData?.content || [],
     "day"
   );
 
-  // 가맹점별 통계 계산 (최다금액/최다승인)
   const merchantStats = useMemo(() => {
     if (!transactionsData?.content || transactionsData.content.length === 0) {
       return {
@@ -102,7 +99,6 @@ export default function Home() {
       };
     }
 
-    // 가맹점별 집계
     const merchantMap = new Map<string, {
       mchtCode: string;
       mchtName: string;
@@ -112,7 +108,6 @@ export default function Home() {
     }>();
 
     transactionsData.content.forEach((tx) => {
-      // 한화(KRW) 통화만 집계
       const currency = (tx.currency || "").toUpperCase();
       if (currency !== "KRW") {
         return; // KRW가 아닌 통화는 제외
@@ -141,7 +136,6 @@ export default function Home() {
       }
     });
 
-    // 정렬
     const allMerchants = Array.from(merchantMap.values());
     const topByAmount = [...allMerchants]
       .sort((a, b) => b.totalAmount - a.totalAmount)

@@ -129,7 +129,6 @@ export default function AnalyticsPage() {
       });
     });
 
-    // useTransactionChart와 동일한 형식으로 변환
     const sortedKeys = Array.from(dailyMap.keys()).sort();
     const categories = sortedKeys.map((key) => {
       const date = new Date(key);
@@ -277,7 +276,7 @@ export default function AnalyticsPage() {
             </div>
           ) : (
             <>
-              <AnalyticsStatsPanel stats={overallStats} />
+              <AnalyticsStatsPanel stats={overallStats} panelClass={panelClass} />
 
               {overallStats && <AverageAmountCard averageAmount={overallStats.averageAmount} />}
 

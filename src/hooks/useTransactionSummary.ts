@@ -37,13 +37,11 @@ export function useTransactionSummary(params: UseTransactionSummaryParams = {}):
     setError(null);
     
     try {
-      // /payments/list를 호출하여 전체 데이터 가져오기 (summary API가 없으므로)
       const result = await transactionsApi.getTransactions({
         from: params.from,
         to: params.to,
         mchtCode: params.mchtCode || params.merchantId,
-        // 페이징 없이 전체 데이터 가져오기 (실제로는 size를 크게 설정)
-        size: 1000, // 충분히 큰 값
+        size: 1000,
         page: 0,
       });
       
@@ -62,7 +60,6 @@ export function useTransactionSummary(params: UseTransactionSummaryParams = {}):
         ? new Date(`${params.to}T23:59:59`).getTime()
         : null;
 
-      // API 응답이 필터를 무시할 수 있으므로 클라이언트에서 한 번 더 필터링
       const filteredData = responseData.filter((tx: { mchtCode?: string; paymentAt?: string }) => {
         const matchesMerchant = params.mchtCode
           ? tx.mchtCode === params.mchtCode
@@ -100,7 +97,6 @@ export function useTransactionSummary(params: UseTransactionSummaryParams = {}):
     }
   };
 
-  // 클라이언트에서 집계 계산
   const summaryData = useMemo(() => {
     if (rawData.length === 0) {
       return {
@@ -114,11 +110,9 @@ export function useTransactionSummary(params: UseTransactionSummaryParams = {}):
       };
     }
 
-    // 원본 rawData의 status 값 확인 (변환 전)
     const rawStatuses = [...new Set(rawData.map(tx => tx.status))];
     console.log("useTransactionSummary - Raw statuses before conversion:", rawStatuses);
     
-    // 각 status별 개수 확인
     const statusCounts = rawData.reduce((acc, tx) => {
       const status = tx.status || "UNKNOWN";
       acc[status] = (acc[status] || 0) + 1;
@@ -128,7 +122,6 @@ export function useTransactionSummary(params: UseTransactionSummaryParams = {}):
     
     const transactions = rawData.map(paymentListResToTransaction);
     
-    // 디버깅: 변환 후 status 값 확인
     if (transactions.length > 0) {
       const uniqueStatuses = [...new Set(transactions.map(tx => tx.status))];
       console.log("useTransactionSummary - Statuses after conversion:", uniqueStatuses);
@@ -137,7 +130,6 @@ export function useTransactionSummary(params: UseTransactionSummaryParams = {}):
     const totalAmount = transactions.reduce((sum, tx) => sum + (tx.amount || 0), 0);
     const totalCount = transactions.length;
     
-    // SUCCESS = 승인, FAILED = 실패
     const approvedTransactions = transactions.filter((tx) => {
       const status = (tx.status || "").toLowerCase().trim();
       return status === "success";
@@ -149,7 +141,6 @@ export function useTransactionSummary(params: UseTransactionSummaryParams = {}):
       return status === "failed";
     }).length;
     
-    // 이 API에서는 PENDING이 없으므로 0
     const pendingCount = 0;
     
     const approvalRate = totalCount > 0 ? (approvedCount / totalCount) * 100 : 0;

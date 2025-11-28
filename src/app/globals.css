@@ -181,11 +181,11 @@ button {
 
 /* 드롭다운 화살표 스타일 개선 */
 select[style*="backgroundImage"] {
-  padding-right: 2rem !important;
+  padding-right: 2rem important;
 }
 
 .dark select[style*="backgroundImage"] {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 4L6 8L10 4' stroke='%23cbd5f5' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 4L6 8L10 4' stroke='%23cbd5f5' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") important;
 }
 
 input::placeholder,
@@ -206,9 +206,9 @@ select option {
 }
 
 :root[data-motion="reduce"] * {
-  animation-duration: 0ms !important;
-  animation-iteration-count: 1 !important;
-  transition-duration: 0ms !important;
+  animation-duration: 0ms important;
+  animation-iteration-count: 1 important;
+  transition-duration: 0ms important;
 }
 
 .micro-card {
@@ -244,13 +244,13 @@ body > div[data-state="open"]::before,
 [data-radix-dialog-overlay],
 [data-state="open"]::before,
 .backdrop-overlay {
-  position: fixed !important;
-  inset: 0 !important;
-  background-color: rgba(0, 0, 0, 0.75) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  z-index: 49 !important;
-  pointer-events: auto !important;
+  position: fixed important;
+  inset: 0 important;
+  background-color: rgba(0, 0, 0, 0.75) important;
+  backdrop-filter: blur(8px) important;
+  -webkit-backdrop-filter: blur(8px) important;
+  z-index: 49 important;
+  pointer-events: auto important;
 }
 
 .dark body > [data-drawer-backdrop],
@@ -259,7 +259,7 @@ body > div[data-state="open"]::before,
 .dark [data-radix-dialog-overlay],
 .dark [data-state="open"]::before,
 .dark .backdrop-overlay {
-  background-color: rgba(0, 0, 0, 0.9) !important;
+  background-color: rgba(0, 0, 0, 0.9) important;
 }
 
 /* Drawer Content - 오른쪽에 고정 (body 직계 자식 우선) */
@@ -271,25 +271,25 @@ body > .detail-drawer,
 [data-radix-dialog-content],
 [role="dialog"][aria-modal="true"],
 .detail-drawer {
-  position: fixed !important;
-  top: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  left: auto !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  height: 100vh !important;
-  max-height: 100vh !important;
-  z-index: 50 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  background-color: var(--surface) !important;
-  border-left: 1px solid var(--border-subtle) !important;
-  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15) !important;
-  overflow: hidden !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  transform: translateX(0) !important;
+  position: fixed important;
+  top: 0 important;
+  right: 0 important;
+  bottom: 0 important;
+  left: auto important;
+  width: 100% important;
+  max-width: 100% important;
+  height: 100vh important;
+  max-height: 100vh important;
+  z-index: 50 important;
+  display: flex important;
+  flex-direction: column important;
+  background-color: var(--surface) important;
+  border-left: 1px solid var(--border-subtle) important;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15) important;
+  overflow: hidden important;
+  margin: 0 important;
+  padding: 0 important;
+  transform: translateX(0) important;
 }
 
 /* 반응형 드로어 폭 */
@@ -302,7 +302,7 @@ body > .detail-drawer,
   [data-radix-dialog-content],
   [role="dialog"][aria-modal="true"],
   .detail-drawer {
-    max-width: 32rem !important; /* 512px */
+    max-width: 32rem important; /* 512px */
   }
 }
 
@@ -315,7 +315,7 @@ body > .detail-drawer,
   [data-radix-dialog-content],
   [role="dialog"][aria-modal="true"],
   .detail-drawer {
-    max-width: 36rem !important; /* 576px */
+    max-width: 36rem important; /* 576px */
   }
 }
 
@@ -328,7 +328,7 @@ body > .detail-drawer,
   [data-radix-dialog-content],
   [role="dialog"][aria-modal="true"],
   .detail-drawer {
-    max-width: 40rem !important; /* 640px */
+    max-width: 40rem important; /* 640px */
   }
 }
 
@@ -376,107 +376,115 @@ body > [role="dialog"][aria-modal="true"]:last-of-type {
 [data-switch-checked="true"],
 [aria-checked="true"][role="switch"],
 button[aria-checked="true"][role="switch"] {
-  background-color: var(--brand-primary) !important;
-  border-color: var(--brand-primary) !important;
+  background-color: var(--brand-primary) important;
+  border-color: var(--brand-primary) important;
 }
 
 [data-switch-checked="true"] *,
 [aria-checked="true"][role="switch"] * {
-  color: white !important;
+  color: white important;
 }
 
 /* PreferenceToggle 내부 Switch 스타일 강화 */
 [data-switch-checked="true"]::before,
 [aria-checked="true"][role="switch"]::before {
-  background-color: white !important;
+  background-color: white important;
 }
 
 /* Switch 컴포넌트 비활성 상태 스타일 - 다크/라이트 모드 가시성 개선 */
 button[role="switch"]:not([aria-checked="true"]),
 [role="switch"]:not([aria-checked="true"]),
 [data-switch-checked="false"] {
-  background-color: #cbd5f5 !important; /* 라이트 모드: 명확한 회색 배경 */
-  border-color: #94a3b8 !important; /* 라이트 모드: 진한 테두리 */
-  border-width: 2px !important;
-  min-width: 44px !important; /* 최소 터치 영역 */
-  min-height: 24px !important;
+  background-color: #cbd5f5 important; /* 라이트 모드: 명확한 회색 배경 */
+  border-color: #94a3b8 important; /* 라이트 모드: 진한 테두리 */
+  border-width: 2px important;
+  min-width: 44px important; /* 최소 터치 영역 */
+  min-height: 24px important;
 }
 
 /* 다크 모드에서 Switch 비활성 상태 더 명확하게 */
 .dark button[role="switch"]:not([aria-checked="true"]),
 .dark [role="switch"]:not([aria-checked="true"]),
 .dark [data-switch-checked="false"] {
-  background-color: #475569 !important; /* 다크 모드: 밝은 회색 배경 */
-  border-color: #64748b !important; /* 다크 모드: 밝은 테두리 */
-  border-width: 2px !important;
-  min-width: 44px !important;
-  min-height: 24px !important;
+  background-color: #475569 important; /* 다크 모드: 밝은 회색 배경 */
+  border-color: #64748b important; /* 다크 모드: 밝은 테두리 */
+  border-width: 2px important;
+  min-width: 44px important;
+  min-height: 24px important;
 }
 
 /* Switch 내부 토글 버튼 (thumb) 스타일 */
 button[role="switch"]:not([aria-checked="true"])::before,
 [role="switch"]:not([aria-checked="true"])::before,
 [data-switch-checked="false"]::before {
-  background-color: #64748b !important; /* 라이트 모드: 중간 회색 */
-  width: 18px !important;
-  height: 18px !important;
+  background-color: #64748b important; /* 라이트 모드: 중간 회색 */
+  width: 18px important;
+  height: 18px important;
 }
 
 .dark button[role="switch"]:not([aria-checked="true"])::before,
 .dark [role="switch"]:not([aria-checked="true"])::before,
 .dark [data-switch-checked="false"]::before {
-  background-color: #cbd5f5 !important; /* 다크 모드: 밝은 회색 */
-  width: 18px !important;
-  height: 18px !important;
+  background-color: #cbd5f5 important; /* 다크 모드: 밝은 회색 */
+  width: 18px important;
+  height: 18px important;
 }
 
 /* Switch 레이블과 간격 */
 [role="switch"] + label,
 label + [role="switch"] {
-  margin-left: 12px !important;
+  margin-left: 12px important;
 }
 
 button[role="switch"],
 [role="switch"] {
-  cursor: pointer !important;
-  position: relative !important;
-  z-index: 1 !important;
+  cursor: pointer important;
+  position: relative important;
+  z-index: 1 important;
 }
 
-[class*="stats-panel"] [class*="value"] span[class*="!text-brand-primary"],
-[class*="stats-panel"] [class*="value"] > span span[class*="!text-brand-primary"],
-[class*="stats"] [class*="value"] span[class*="!text-brand-primary"],
-[class*="stats"] [class*="value"] > span span[class*="!text-brand-primary"] {
-  color: var(--brand-primary) !important;
+[class*="stats-panel"] [class*="value"] span[class*="text-brand-primary"],
+[class*="stats-panel"] [class*="value"] > span span[class*="text-brand-primary"],
+[class*="stats"] [class*="value"] span[class*="text-brand-primary"],
+[class*="stats"] [class*="value"] > span span[class*="text-brand-primary"] {
+  color: var(--brand-primary);}
+
+[class*="stats-panel"] [class*="value"] span[class*="text-brand-secondary"],
+[class*="stats-panel"] [class*="value"] > span span[class*="text-brand-secondary"],
+[class*="stats"] [class*="value"] span[class*="text-brand-secondary"],
+[class*="stats"] [class*="value"] > span span[class*="text-brand-secondary"] {
+  color: var(--brand-secondary);}
+
+[class*="stats-panel"] [class*="value"] span[class*="text-red-500"],
+[class*="stats-panel"] [class*="value"] > span span[class*="text-red-500"],
+[class*="stats"] [class*="value"] span[class*="text-red-500"],
+[class*="stats"] [class*="value"] > span span[class*="text-red-500"] {
+  color: rgb(239, 68, 68);}
+
+[class*="stats-panel"] [class*="value"] span[class*="text-orange-500"],
+[class*="stats-panel"] [class*="value"] > span span[class*="text-orange-500"],
+[class*="stats"] [class*="value"] span[class*="text-orange-500"],
+[class*="stats"] [class*="value"] > span span[class*="text-orange-500"] {
+  color: rgb(249, 115, 22);
 }
 
-[class*="stats-panel"] [class*="value"] span[class*="!text-brand-secondary"],
-[class*="stats-panel"] [class*="value"] > span span[class*="!text-brand-secondary"],
-[class*="stats"] [class*="value"] span[class*="!text-brand-secondary"],
-[class*="stats"] [class*="value"] > span span[class*="!text-brand-secondary"] {
-  color: var(--brand-secondary) !important;
-}
+[class*="stats-panel"] [class*="value"] span[class*="text-brand-primary"],
+[class*="stats-panel"] [class*="value"] > span span[class*="text-brand-primary"],
+[class*="stats"] [class*="value"] span[class*="text-brand-primary"],
+[class*="stats"] [class*="value"] > span span[class*="text-brand-primary"] {
+  color: var(--brand-primary);}
 
-[class*="stats-panel"] [class*="value"] span[class*="!text-red-500"],
-[class*="stats-panel"] [class*="value"] > span span[class*="!text-red-500"],
-[class*="stats"] [class*="value"] span[class*="!text-red-500"],
-[class*="stats"] [class*="value"] > span span[class*="!text-red-500"] {
-  color: rgb(239, 68, 68) !important;
-}
+[class*="stats-panel"] [class*="value"] span[class*="text-brand-secondary"],
+[class*="stats-panel"] [class*="value"] > span span[class*="text-brand-secondary"],
+[class*="stats"] [class*="value"] span[class*="text-brand-secondary"],
+[class*="stats"] [class*="value"] > span span[class*="text-brand-secondary"] {
+  color: var(--brand-secondary);}
 
-[class*="stats-panel"] [class*="value"] span[class*="!text-orange-500"],
-[class*="stats-panel"] [class*="value"] > span span[class*="!text-orange-500"],
-[class*="stats"] [class*="value"] span[class*="!text-orange-500"],
-[class*="stats"] [class*="value"] > span span[class*="!text-orange-500"] {
-  color: rgb(249, 115, 22) !important;
-}
-
-[class*="stats-panel"] [class*="value"] span[class*="!text-"],
-[class*="stats-panel"] [class*="value"] > span span[class*="!text-"],
-[class*="stats"] [class*="value"] span[class*="!text-"],
-[class*="stats"] [class*="value"] > span span[class*="!text-"] {
-  color: inherit !important;
-}
+[class*="stats-panel"] [class*="value"] span[class*="text-red-500"],
+[class*="stats-panel"] [class*="value"] > span span[class*="text-red-500"],
+[class*="stats"] [class*="value"] span[class*="text-red-500"],
+[class*="stats"] [class*="value"] > span span[class*="text-red-500"] {
+  color: rgb(239, 68, 68);}
 
 @layer utilities {
   .text-brand-primary {

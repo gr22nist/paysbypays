@@ -192,11 +192,17 @@ export function MerchantFormFields({
             onChange={(e) => onChange("status", e.target.value)}
             className="micro-input w-full appearance-none rounded-lg border border-[var(--border-subtle)] bg-[var(--surface)] px-3 py-2 pr-9 text-sm font-medium text-[var(--text-strong)] transition-colors hover:border-brand-primary/50 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20"
           >
-            {merchantStatuses.map((status) => (
-              <option key={status.code} value={status.code} className="bg-[var(--surface)] text-[var(--text-strong)]">
-                {status.description}
-              </option>
-            ))}
+            {merchantStatuses.map((status) => {
+              const statusKey = status.code.toUpperCase();
+              const translationKey = `merchants:statuses.${statusKey.toLowerCase()}`;
+              const translatedLabel = t(translationKey);
+              const isMissing = translatedLabel.includes("[MISSING:") || translatedLabel === translationKey;
+              return (
+                <option key={status.code} value={status.code} className="bg-[var(--surface)] text-[var(--text-strong)]">
+                  {isMissing ? status.description : translatedLabel}
+                </option>
+              );
+            })}
           </select>
           <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-[var(--text-muted)]">
             <Icon name="chevronDown" size={16} variant="secondary" />

@@ -3,7 +3,6 @@ import { mockHealthResponse, generateRandomHealthResponse } from "@/data/health"
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://recruit.paysbypays.com/api/v1";
 
-// URL에서 path 추출 (쿼리 제외)
 function getPathFromUrl(url: string): string {
   try {
     const parsed = new URL(url);
@@ -18,7 +17,6 @@ function getPathFromUrl(url: string): string {
   }
 }
 
-// params에서 path 추출 (fallback)
 async function getPathFromParams(params: Promise<{ path?: string[] }>): Promise<string> {
   try {
     const resolved = await params;
@@ -37,10 +35,8 @@ export async function GET(
   { params }: { params: Promise<{ path?: string[] }> }
 ) {
   try {
-    // URL에서 직접 path 추출 (더 안전)
     let path = getPathFromUrl(request.url);
     
-    // URL에서 추출 실패 시 params 사용
     if (!path) {
       path = await getPathFromParams(params);
     }
@@ -127,10 +123,8 @@ export async function POST(
   { params }: { params: Promise<{ path?: string[] }> }
 ) {
   try {
-    // URL에서 직접 path 추출 (더 안전)
     let path = getPathFromUrl(request.url);
     
-    // URL에서 추출 실패 시 params 사용
     if (!path) {
       path = await getPathFromParams(params);
     }

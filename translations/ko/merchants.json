@@ -48,10 +48,13 @@
     "search": "검색",
     "searchPlaceholder": "가맹점명 또는 코드로 검색",
     "status": "가맹점 상태",
+    "all": "전체",
+    "clear": "전체",
     "reset": "초기화"
   },
   "stats": {
     "title": "통계 요약",
+    "description": "가맹점 현황 통계",
     "total": {
       "label": "전체 가맹점",
       "description": "등록된 가맹점 수"

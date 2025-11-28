@@ -2,6 +2,7 @@
 
 import { StatsPanel } from "@hua-labs/ui";
 import { useTranslation } from "@hua-labs/i18n-core";
+import { SectionHeaderBlock } from "@/components/sections/SectionHeaderBlock";
 
 interface MerchantStats {
   totalCount: number;
@@ -15,18 +16,25 @@ interface MerchantStats {
 interface MerchantStatsPanelProps {
   stats: MerchantStats;
   loading?: boolean;
+  panelClass: string;
 }
 
-export function MerchantStatsPanel({ stats, loading = false }: MerchantStatsPanelProps) {
+export function MerchantStatsPanel({ stats, loading = false, panelClass }: MerchantStatsPanelProps) {
   const { t, tWithParams } = useTranslation();
   const countUnit = t("common:units.count");
 
   return (
-    <StatsPanel
-      title={t("merchants:stats.title")}
-      columns={4}
-      loading={loading}
-      items={[
+    <div className={`micro-card ${panelClass}`}>
+      <SectionHeaderBlock
+        title={t("merchants:stats.title")}
+        description={t("merchants:stats.description")}
+        containerClassName="px-6 pt-6"
+      />
+      <div className="px-6 pb-6 pt-4">
+        <StatsPanel
+          columns={4}
+          loading={loading}
+          items={[
         {
           label: t("merchants:stats.total.label"),
           value: (
@@ -79,7 +87,9 @@ export function MerchantStatsPanel({ stats, loading = false }: MerchantStatsPane
           }),
         },
       ]}
-    />
+        />
+      </div>
+    </div>
   );
 }
 

@@ -22,7 +22,6 @@ type PayTypeKey = keyof typeof PAY_TYPE_BADGE_CLASSES;
 
 const DEFAULT_BADGE = UNIFIED_BADGE_CLASS;
 
-// 결제 수단 코드를 번역 키로 매핑
 export function getPayTypeTranslationKey(type: string): string | null {
   if (!type) return null;
   

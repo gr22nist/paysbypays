@@ -64,7 +64,28 @@
     "device": "Device",
     "easyPay": "Easy Pay",
     "subscription": "Subscription",
-    "other": "Other"
+    "other": "Other",
+    "CARD": "Credit Card",
+    "TERMINAL": "Terminal",
+    "MOBILE": "Mobile",
+    "BANK_TRANSFER": "Bank Transfer",
+    "VIRTUAL_ACCOUNT": "Virtual Account",
+    "QR": "QR Payment",
+    "CASH": "Cash",
+    "ONLINE": "Online",
+    "DEVICE": "Device",
+    "EASY_PAY": "Easy Pay",
+    "SUBSCRIPTION": "Subscription",
+    "VACT": "Virtual Account",
+    "BILLING": "Subscription"
+  },
+  "statuses": {
+    "APPROVED": "Approved",
+    "PENDING": "Pending",
+    "FAILED": "Failed",
+    "CANCELLED": "Cancelled",
+    "DECLINED": "Declined",
+    "SUCCESS": "Approved"
   },
   "detail": {
     "title": "Transaction Details",

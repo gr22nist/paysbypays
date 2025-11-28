@@ -17,7 +17,6 @@ export function LogoutConfirmModal({
   const { t } = useTranslation();
 
   const handleConfirm = () => {
-    // Mock 로그아웃 (장식용)
     onConfirm();
     onOpenChange(false);
   };

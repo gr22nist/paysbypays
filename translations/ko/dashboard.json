@@ -93,6 +93,10 @@
       "today": "오늘 정산 예정",
       "tomorrow": "내일 정산 예정",
       "viewAll": "정산 현황 보기"
+    },
+    "todayMetrics": {
+      "title": "오늘의 주요 지표",
+      "loading": "오늘의 지표를 불러오는 중..."
     }
   }
 }

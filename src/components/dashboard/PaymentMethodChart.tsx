@@ -31,20 +31,17 @@ export function PaymentMethodChart({ className = "" }: PaymentMethodChartProps) 
   const { payTypes } = useCommonCodes();
   const { t } = useTranslation();
 
-  // 결제 수단별 통계 계산
   const chartData = useMemo(() => {
     if (!transactionsData?.content) return [];
 
     const statsMap = new Map<string, { count: number; name: string }>();
 
-    // 거래 데이터 집계 (원본 타입 유지)
     transactionsData.content.forEach((tx) => {
       const payType = (tx.paymentMethod || tx.payType || "UNKNOWN").toUpperCase();
       const current = statsMap.get(payType) || { count: 0, name: payType };
       statsMap.set(payType, { count: current.count + 1, name: payType });
     });
 
-    // 상위 5개만 표시, 나머지는 "기타"로 합침
     const sorted = Array.from(statsMap.entries())
       .sort((a, b) => b[1].count - a[1].count)
       .slice(0, 5)

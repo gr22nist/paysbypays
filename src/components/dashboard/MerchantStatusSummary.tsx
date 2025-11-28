@@ -19,7 +19,6 @@ export function MerchantStatusSummary({ className = "" }: MerchantStatusSummaryP
     size: 1000,
   });
 
-  // 가맹점 상태 분석 - 전체 API 데이터 기준
   const merchantStatus = useMemo(() => {
     if (!merchantsData?.content || !transactionsData?.content) {
       return {
@@ -32,7 +31,6 @@ export function MerchantStatusSummary({ className = "" }: MerchantStatusSummaryP
 
     const total = merchantsData.content.length;
 
-    // 전체 거래 데이터에서 거래가 있는 가맹점 (활성)
     const activeMerchantIds = new Set<string>();
     transactionsData.content.forEach((tx) => {
       if (tx.merchantId) activeMerchantIds.add(tx.merchantId);
@@ -44,8 +42,7 @@ export function MerchantStatusSummary({ className = "" }: MerchantStatusSummaryP
     const active = activeMerchantIds.size;
     const inactive = total - active;
 
-    // 최근 30일간 등록된 가맹점 (신규) - API에 날짜 필드가 없으면 0으로 처리
-    const newMerchants = 0; // TODO: API에 createdAt/updatedAt 필드 추가 시 활성화
+    const newMerchants = 0;
 
     return {
       total,

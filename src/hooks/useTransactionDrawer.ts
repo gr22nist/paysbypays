@@ -20,8 +20,6 @@ export function useTransactionDrawer(): UseTransactionDrawerReturn {
 
   const closeDrawer = () => {
     setDrawerOpen(false);
-    // Drawer가 닫힌 후 약간의 지연을 두고 선택된 거래를 초기화
-    // (애니메이션이 완료될 시간을 줌)
     setTimeout(() => {
       setSelectedTransaction(null);
     }, 200);

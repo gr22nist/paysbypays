@@ -28,10 +28,13 @@
     "search": "検索",
     "searchPlaceholder": "加盟店名またはコードで検索",
     "status": "加盟店ステータス",
+    "all": "すべて",
+    "clear": "すべて",
     "reset": "リセット"
   },
   "stats": {
     "title": "統計サマリー",
+    "description": "加盟店現況統計",
     "total": {
       "label": "全加盟店",
       "description": "登録された加盟店数"
