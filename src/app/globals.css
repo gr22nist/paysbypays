@@ -1,0 +1,506 @@
+@import "tailwindcss";
+
+:root {
+  /* Layout tokens */
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --surface-muted: #f1f5f9;
+  --border-subtle: #e2e8f0;
+  --border-strong: #cbd5f5;
+  --header-height: 76px;
+  --motion-duration-fast: 120ms;
+  --motion-duration-medium: 180ms;
+  --motion-duration-slow: 260ms;
+  --motion-ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Typography */
+  --text-strong: #0f172a;
+  --text-muted: #475569;
+  --text-subtle: #64748b;
+  --font-scale: 1;
+
+  /* Brand palette */
+  --brand-primary: #0052cc;
+  --brand-primary-dark: #003a99;
+  --brand-primary-soft: #e6f0ff;
+  --brand-secondary: #00c897;
+  --brand-secondary-dark: #0b7a5b;
+  --brand-secondary-soft: #e9fbf5;
+}
+
+.dark {
+  --background: #04070d;
+  --surface: #0f1525;
+  --surface-muted: #111827;
+  --border-subtle: #1a2436;
+  --border-strong: #2a364d;
+  --text-strong: #f8fafc;
+  --text-muted: #cbd5f5;
+  --text-subtle: #94a3b8;
+  --brand-primary: #3b82f6;
+  --brand-primary-dark: #2563eb;
+  --brand-primary-soft: rgba(59, 130, 246, 0.2);
+  --brand-secondary: #34d399;
+  --brand-secondary-dark: #059669;
+  --brand-secondary-soft: rgba(52, 211, 153, 0.15);
+}
+
+/* Theme-aware utility overrides */
+.text-gray-900,
+.text-gray-800,
+.text-slate-900,
+.text-slate-800 {
+  color: var(--text-strong);
+}
+
+.text-gray-700,
+.text-slate-700 {
+  color: var(--text-muted);
+}
+
+.text-gray-600,
+.text-gray-500,
+.text-slate-600,
+.text-slate-500 {
+  color: var(--text-muted);
+}
+
+.text-gray-400,
+.text-slate-400 {
+  color: var(--text-subtle);
+}
+
+.text-gray-300,
+.text-slate-300 {
+  color: var(--text-subtle);
+}
+
+.bg-white,
+.bg-slate-50 {
+  background-color: var(--surface);
+}
+
+.bg-gray-50,
+.bg-gray-100,
+.bg-gray-200,
+.bg-slate-100,
+.bg-slate-200 {
+  background-color: var(--surface-muted);
+}
+
+.border-gray-50,
+.border-gray-100,
+.border-gray-200,
+.border-slate-100,
+.border-slate-200 {
+  border-color: var(--border-subtle);
+}
+
+.border-gray-300,
+.border-slate-300 {
+  border-color: var(--border-strong);
+}
+
+.bg-brand-primary {
+  background-color: var(--brand-primary);
+}
+
+.text-brand-primary {
+  color: var(--brand-primary);
+}
+
+.bg-brand-secondary {
+  background-color: var(--brand-secondary);
+}
+
+.text-brand-secondary {
+  color: var(--brand-secondary);
+}
+
+/* 고대비 모드 - WCAG AAA 기준 (명암비 7:1 이상) */
+:root[data-contrast="high"] {
+  /* 라이트 모드 고대비 - 더 강한 대비 */
+  --background: #ffffff;
+  --surface: #ffffff;
+  --surface-muted: #f1f5f9;
+  --border-subtle: #475569; /* 더 진한 테두리 */
+  --border-strong: #334155; /* 더 진한 테두리 */
+  --text-strong: #000000; /* 순수 검정 */
+  --text-muted: #1e293b; /* 더 진한 텍스트 */
+  --text-subtle: #334155; /* 더 진한 텍스트 */
+  --brand-primary: #003d99; /* 더 진한 브랜드 컬러 */
+  --brand-primary-dark: #002d73;
+  --brand-secondary: #0b7a5b; /* 더 진한 브랜드 컬러 */
+  --brand-secondary-dark: #065a44;
+}
+
+:root[data-contrast="high"].dark {
+  /* 다크 모드 고대비 - 더 강한 대비 */
+  --background: #000000;
+  --surface: #0a0f1a;
+  --surface-muted: #1a2436;
+  --border-subtle: #cbd5f5; /* 더 밝은 테두리 */
+  --border-strong: #e2e8f0; /* 더 밝은 테두리 */
+  --text-strong: #ffffff; /* 순수 흰색 */
+  --text-muted: #f1f5f9; /* 더 밝은 텍스트 */
+  --text-subtle: #e2e8f0; /* 더 밝은 텍스트 */
+  --brand-primary: #60a5fa; /* 더 밝은 브랜드 컬러 */
+  --brand-primary-dark: #3b82f6;
+  --brand-secondary: #4ade80; /* 더 밝은 브랜드 컬러 */
+  --brand-secondary-dark: #34d399;
+}
+
+html {
+  font-size: calc(16px * var(--font-scale));
+}
+
+body {
+  background: var(--background);
+  color: var(--text-strong);
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  font-kerning: normal;
+}
+
+/* 모든 요소에 폰트 스케일 상속 */
+*,
+*::before,
+*::after {
+  font-size: inherit;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  color: var(--text-strong);
+  letter-spacing: -0.01em;
+}
+
+/* 드롭다운 화살표 스타일 개선 */
+select[style*="backgroundImage"] {
+  padding-right: 2rem !important;
+}
+
+.dark select[style*="backgroundImage"] {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 4L6 8L10 4' stroke='%23cbd5f5' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-subtle);
+  opacity: 1;
+}
+
+/* Select 옵션 스타일 - 다크/라이트 모드 대응 */
+select option {
+  background-color: var(--surface);
+  color: var(--text-strong);
+}
+
+.dark select option {
+  background-color: var(--surface);
+  color: var(--text-strong);
+}
+
+:root[data-motion="reduce"] * {
+  animation-duration: 0ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0ms !important;
+}
+
+.micro-card {
+  transition:
+    border-color var(--motion-duration-fast) var(--motion-ease),
+    background-color var(--motion-duration-fast) var(--motion-ease);
+}
+
+.micro-button {
+  transition:
+    color var(--motion-duration-fast) var(--motion-ease),
+    border-color var(--motion-duration-fast) var(--motion-ease),
+    background-color var(--motion-duration-fast) var(--motion-ease);
+  /* 마이크로 클릭 피드백 */
+  position: relative;
+}
+
+.micro-button:active:not(:disabled) {
+  transform: scale(0.98);
+  transition: transform 80ms var(--motion-ease);
+}
+
+.micro-link {
+  transition:
+    color var(--motion-duration-fast) var(--motion-ease),
+    background-color var(--motion-duration-fast) var(--motion-ease);
+}
+
+body > [data-drawer-backdrop],
+body > [data-radix-dialog-overlay],
+body > div[data-state="open"]::before,
+[data-drawer-backdrop],
+[data-radix-dialog-overlay],
+[data-state="open"]::before,
+.backdrop-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  z-index: 49 !important;
+  pointer-events: auto !important;
+}
+
+.dark body > [data-drawer-backdrop],
+.dark body > [data-radix-dialog-overlay],
+.dark [data-drawer-backdrop],
+.dark [data-radix-dialog-overlay],
+.dark [data-state="open"]::before,
+.dark .backdrop-overlay {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Drawer Content - 오른쪽에 고정 (body 직계 자식 우선) */
+body > [data-drawer-content],
+body > [data-radix-dialog-content],
+body > [role="dialog"][aria-modal="true"],
+body > .detail-drawer,
+[data-drawer-content],
+[data-radix-dialog-content],
+[role="dialog"][aria-modal="true"],
+.detail-drawer {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100vh !important;
+  max-height: 100vh !important;
+  z-index: 50 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background-color: var(--surface) !important;
+  border-left: 1px solid var(--border-subtle) !important;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15) !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: translateX(0) !important;
+}
+
+/* 반응형 드로어 폭 */
+@media (min-width: 640px) {
+  body > [data-drawer-content],
+  body > [data-radix-dialog-content],
+  body > [role="dialog"][aria-modal="true"],
+  body > .detail-drawer,
+  [data-drawer-content],
+  [data-radix-dialog-content],
+  [role="dialog"][aria-modal="true"],
+  .detail-drawer {
+    max-width: 32rem !important; /* 512px */
+  }
+}
+
+@media (min-width: 768px) {
+  body > [data-drawer-content],
+  body > [data-radix-dialog-content],
+  body > [role="dialog"][aria-modal="true"],
+  body > .detail-drawer,
+  [data-drawer-content],
+  [data-radix-dialog-content],
+  [role="dialog"][aria-modal="true"],
+  .detail-drawer {
+    max-width: 36rem !important; /* 576px */
+  }
+}
+
+@media (min-width: 1024px) {
+  body > [data-drawer-content],
+  body > [data-radix-dialog-content],
+  body > [role="dialog"][aria-modal="true"],
+  body > .detail-drawer,
+  [data-drawer-content],
+  [data-radix-dialog-content],
+  [role="dialog"][aria-modal="true"],
+  .detail-drawer {
+    max-width: 40rem !important; /* 640px */
+  }
+}
+
+/* Drawer 내부 컨텐츠 스크롤 */
+body > [data-drawer-content] > *,
+body > [data-radix-dialog-content] > *,
+[data-drawer-content] > *,
+[data-radix-dialog-content] > * {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* Drawer가 열릴 때 슬라이드 애니메이션 (마이크로 모션) */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+body > [data-state="open"][data-side="right"],
+body > [data-drawer-content][data-state="open"],
+[data-state="open"][data-side="right"],
+[data-drawer-content][data-state="open"],
+[role="dialog"][aria-modal="true"][data-state="open"] {
+  animation: slideInRight var(--motion-duration-medium) var(--motion-ease);
+}
+
+/* 로그아웃 모달 최상단 배치 - 모든 컴포넌트 위에 표시 */
+/* z-index 계층: Drawer backdrop 49, Drawer content 50, AlertBanner 50, 로그아웃 모달 backdrop 99, 로그아웃 모달 content 100 */
+body > [data-radix-dialog-overlay]:last-of-type {
+  z-index: 99;
+}
+
+body > [data-radix-dialog-content]:last-of-type,
+body > [role="dialog"][aria-modal="true"]:last-of-type {
+  z-index: 100;
+}
+
+/* Switch 컴포넌트 활성 상태 스타일 개선 */
+[data-switch-checked="true"],
+[aria-checked="true"][role="switch"],
+button[aria-checked="true"][role="switch"] {
+  background-color: var(--brand-primary) !important;
+  border-color: var(--brand-primary) !important;
+}
+
+[data-switch-checked="true"] *,
+[aria-checked="true"][role="switch"] * {
+  color: white !important;
+}
+
+/* PreferenceToggle 내부 Switch 스타일 강화 */
+[data-switch-checked="true"]::before,
+[aria-checked="true"][role="switch"]::before {
+  background-color: white !important;
+}
+
+/* Switch 컴포넌트 비활성 상태 스타일 - 다크/라이트 모드 가시성 개선 */
+button[role="switch"]:not([aria-checked="true"]),
+[role="switch"]:not([aria-checked="true"]),
+[data-switch-checked="false"] {
+  background-color: #cbd5f5 !important; /* 라이트 모드: 명확한 회색 배경 */
+  border-color: #94a3b8 !important; /* 라이트 모드: 진한 테두리 */
+  border-width: 2px !important;
+  min-width: 44px !important; /* 최소 터치 영역 */
+  min-height: 24px !important;
+}
+
+/* 다크 모드에서 Switch 비활성 상태 더 명확하게 */
+.dark button[role="switch"]:not([aria-checked="true"]),
+.dark [role="switch"]:not([aria-checked="true"]),
+.dark [data-switch-checked="false"] {
+  background-color: #475569 !important; /* 다크 모드: 밝은 회색 배경 */
+  border-color: #64748b !important; /* 다크 모드: 밝은 테두리 */
+  border-width: 2px !important;
+  min-width: 44px !important;
+  min-height: 24px !important;
+}
+
+/* Switch 내부 토글 버튼 (thumb) 스타일 */
+button[role="switch"]:not([aria-checked="true"])::before,
+[role="switch"]:not([aria-checked="true"])::before,
+[data-switch-checked="false"]::before {
+  background-color: #64748b !important; /* 라이트 모드: 중간 회색 */
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.dark button[role="switch"]:not([aria-checked="true"])::before,
+.dark [role="switch"]:not([aria-checked="true"])::before,
+.dark [data-switch-checked="false"]::before {
+  background-color: #cbd5f5 !important; /* 다크 모드: 밝은 회색 */
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* Switch 레이블과 간격 */
+[role="switch"] + label,
+label + [role="switch"] {
+  margin-left: 12px !important;
+}
+
+button[role="switch"],
+[role="switch"] {
+  cursor: pointer !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+[class*="stats-panel"] [class*="value"] span[class*="!text-brand-primary"],
+[class*="stats-panel"] [class*="value"] > span span[class*="!text-brand-primary"],
+[class*="stats"] [class*="value"] span[class*="!text-brand-primary"],
+[class*="stats"] [class*="value"] > span span[class*="!text-brand-primary"] {
+  color: var(--brand-primary) !important;
+}
+
+[class*="stats-panel"] [class*="value"] span[class*="!text-brand-secondary"],
+[class*="stats-panel"] [class*="value"] > span span[class*="!text-brand-secondary"],
+[class*="stats"] [class*="value"] span[class*="!text-brand-secondary"],
+[class*="stats"] [class*="value"] > span span[class*="!text-brand-secondary"] {
+  color: var(--brand-secondary) !important;
+}
+
+[class*="stats-panel"] [class*="value"] span[class*="!text-red-500"],
+[class*="stats-panel"] [class*="value"] > span span[class*="!text-red-500"],
+[class*="stats"] [class*="value"] span[class*="!text-red-500"],
+[class*="stats"] [class*="value"] > span span[class*="!text-red-500"] {
+  color: rgb(239, 68, 68) !important;
+}
+
+[class*="stats-panel"] [class*="value"] span[class*="!text-orange-500"],
+[class*="stats-panel"] [class*="value"] > span span[class*="!text-orange-500"],
+[class*="stats"] [class*="value"] span[class*="!text-orange-500"],
+[class*="stats"] [class*="value"] > span span[class*="!text-orange-500"] {
+  color: rgb(249, 115, 22) !important;
+}
+
+[class*="stats-panel"] [class*="value"] span[class*="!text-"],
+[class*="stats-panel"] [class*="value"] > span span[class*="!text-"],
+[class*="stats"] [class*="value"] span[class*="!text-"],
+[class*="stats"] [class*="value"] > span span[class*="!text-"] {
+  color: inherit !important;
+}
+
+@layer utilities {
+  .text-brand-primary {
+    color: var(--brand-primary);
+  }
+  .hover\:text-brand-primary-dark:hover {
+    color: var(--brand-primary-dark);
+  }
+  .focus\:ring-brand-primary:focus {
+    --tw-ring-color: var(--brand-primary);
+  }
+  .bg-brand-primary-soft {
+    background-color: var(--brand-primary-soft);
+  }
+  .border-brand-primary-soft {
+    border-color: var(--brand-primary-soft);
+  }
+  .text-brand-secondary {
+    color: var(--brand-secondary);
+  }
+  .bg-brand-secondary-soft {
+    background-color: var(--brand-secondary-soft);
+  }
+  .border-brand-secondary-soft {
+    border-color: var(--brand-secondary-soft);
+  }
+}
